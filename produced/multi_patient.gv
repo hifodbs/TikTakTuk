@@ -1,0 +1,283 @@
+digraph {
+	graph [nodesep=0.2,
+		rankdir=TB,
+		ranksep=2.5
+	];
+	node [fontsize=14,
+		height=0.5,
+		shape=box,
+		width=0.3
+	];
+	subgraph cluster_1 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 1",
+			rank=same
+		];
+		GRIN2A	[label="G
+R
+I
+N
+2
+A"];
+		PTPRD	[label="P
+T
+P
+R
+D"];
+		DDR2	[label="D
+D
+R
+2"];
+		EPHA2	[label="E
+P
+H
+A
+2"];
+		FCGR2B	[label="F
+C
+G
+R
+2
+B"];
+		FMN2	[label="F
+M
+N
+2"];
+		ID3	[label="I
+D
+3"];
+		SPEN	[label="S
+P
+E
+N"];
+		ELF3	[label="E
+L
+F
+3"];
+		FCRL4	[label="F
+C
+R
+L
+4"];
+		AKT3	[label="A
+K
+T
+3"];
+		RGS7	[label="R
+G
+S
+7"];
+		NTRK1	[label="N
+T
+R
+K
+1"];
+		BTG2	[label="B
+T
+G
+2"];
+		ELK4	[label="E
+L
+K
+4"];
+		NVL	[label="N
+V
+L"];
+		PTPRC	[label="P
+T
+P
+R
+C"];
+		TPR	[label="T
+P
+R"];
+		ABL2	[label="A
+B
+L
+2"];
+		ARHGEF10L	[label="A
+R
+H
+G
+E
+F
+1
+0
+L"];
+		CDC73	[label="C
+D
+C
+7
+3"];
+		DHX9	[label="D
+H
+X
+9"];
+		PTPN14	[label="P
+T
+P
+N
+1
+4"];
+		ZBTB7B	[label="Z
+B
+T
+B
+7
+B"];
+	}
+	subgraph cluster_2 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 2",
+			rank=same
+		];
+		NOTCH1	[label=NOTCH1];
+		RXRA	[label=RXRA];
+		TP53	[label=TP53];
+		CUX1	[label=CUX1];
+		MUC6	[label=MUC6];
+	}
+	subgraph cluster_3 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 3",
+			rank=same
+		];
+		BIRC3	[label=BIRC3];
+	}
+	subgraph cluster_5 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 5",
+			rank=same
+		];
+		PTCH1	[label=PTCH1];
+	}
+	GRIN2A -> NOTCH1;
+	GRIN2A -> RXRA;
+	GRIN2A -> TP53;
+	GRIN2A -> CUX1;
+	GRIN2A -> MUC6;
+	PTPRD -> NOTCH1;
+	PTPRD -> RXRA;
+	PTPRD -> TP53;
+	PTPRD -> CUX1;
+	PTPRD -> MUC6;
+	DDR2 -> NOTCH1;
+	DDR2 -> RXRA;
+	DDR2 -> TP53;
+	DDR2 -> CUX1;
+	DDR2 -> MUC6;
+	EPHA2 -> NOTCH1;
+	EPHA2 -> RXRA;
+	EPHA2 -> TP53;
+	EPHA2 -> CUX1;
+	EPHA2 -> MUC6;
+	FCGR2B -> NOTCH1;
+	FCGR2B -> RXRA;
+	FCGR2B -> TP53;
+	FCGR2B -> CUX1;
+	FCGR2B -> MUC6;
+	FMN2 -> NOTCH1;
+	FMN2 -> RXRA;
+	FMN2 -> TP53;
+	FMN2 -> CUX1;
+	FMN2 -> MUC6;
+	ID3 -> NOTCH1;
+	ID3 -> RXRA;
+	ID3 -> TP53;
+	ID3 -> CUX1;
+	ID3 -> MUC6;
+	SPEN -> NOTCH1;
+	SPEN -> RXRA;
+	SPEN -> TP53;
+	SPEN -> CUX1;
+	SPEN -> MUC6;
+	ELF3 -> NOTCH1;
+	ELF3 -> RXRA;
+	ELF3 -> TP53;
+	ELF3 -> CUX1;
+	ELF3 -> MUC6;
+	FCRL4 -> NOTCH1;
+	FCRL4 -> RXRA;
+	FCRL4 -> TP53;
+	FCRL4 -> CUX1;
+	FCRL4 -> MUC6;
+	AKT3 -> NOTCH1;
+	AKT3 -> RXRA;
+	AKT3 -> TP53;
+	AKT3 -> CUX1;
+	AKT3 -> MUC6;
+	RGS7 -> NOTCH1;
+	RGS7 -> RXRA;
+	RGS7 -> TP53;
+	RGS7 -> CUX1;
+	RGS7 -> MUC6;
+	NTRK1 -> NOTCH1;
+	NTRK1 -> RXRA;
+	NTRK1 -> TP53;
+	NTRK1 -> CUX1;
+	NTRK1 -> MUC6;
+	BTG2 -> NOTCH1;
+	BTG2 -> RXRA;
+	BTG2 -> TP53;
+	BTG2 -> CUX1;
+	BTG2 -> MUC6;
+	ELK4 -> NOTCH1;
+	ELK4 -> RXRA;
+	ELK4 -> TP53;
+	ELK4 -> CUX1;
+	ELK4 -> MUC6;
+	NVL -> NOTCH1;
+	NVL -> RXRA;
+	NVL -> TP53;
+	NVL -> CUX1;
+	NVL -> MUC6;
+	PTPRC -> NOTCH1;
+	PTPRC -> RXRA;
+	PTPRC -> TP53;
+	PTPRC -> CUX1;
+	PTPRC -> MUC6;
+	TPR -> NOTCH1;
+	TPR -> RXRA;
+	TPR -> TP53;
+	TPR -> CUX1;
+	TPR -> MUC6;
+	ABL2 -> NOTCH1;
+	ABL2 -> RXRA;
+	ABL2 -> TP53;
+	ABL2 -> CUX1;
+	ABL2 -> MUC6;
+	ARHGEF10L -> NOTCH1;
+	ARHGEF10L -> RXRA;
+	ARHGEF10L -> TP53;
+	ARHGEF10L -> CUX1;
+	ARHGEF10L -> MUC6;
+	CDC73 -> NOTCH1;
+	CDC73 -> RXRA;
+	CDC73 -> TP53;
+	CDC73 -> CUX1;
+	CDC73 -> MUC6;
+	DHX9 -> NOTCH1;
+	DHX9 -> RXRA;
+	DHX9 -> TP53;
+	DHX9 -> CUX1;
+	DHX9 -> MUC6;
+	PTPN14 -> NOTCH1;
+	PTPN14 -> RXRA;
+	PTPN14 -> TP53;
+	PTPN14 -> CUX1;
+	PTPN14 -> MUC6;
+	ZBTB7B -> NOTCH1;
+	ZBTB7B -> RXRA;
+	ZBTB7B -> TP53;
+	ZBTB7B -> CUX1;
+	ZBTB7B -> MUC6;
+	NOTCH1 -> BIRC3;
+	RXRA -> BIRC3;
+	TP53 -> BIRC3;
+	CUX1 -> BIRC3;
+	MUC6 -> BIRC3;
+}
