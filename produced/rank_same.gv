@@ -1,0 +1,353 @@
+digraph {
+	graph [nodesep=0.2,
+		rankdir=TB,
+		ranksep=2.5
+	];
+	node [fontsize=14,
+		height=0.5,
+		shape=box,
+		width=0.3
+	];
+	subgraph cluster_1 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 1",
+			rank=same
+		];
+		INPPL1	[label=INPPL1];
+		NUMA1	[label=NUMA1];
+	}
+	subgraph cluster_2 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 2",
+			rank=same
+		];
+		NCOA2	[label=NCOA2];
+		PREX2	[label=PREX2];
+		RUNX1T1	[label=RUNX1T1];
+	}
+	subgraph cluster_3 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 3",
+			rank=same
+		];
+		ELN	[label=ELN];
+		GTF2I	[label=GTF2I];
+		HIP1	[label=HIP1];
+		BRAF	[label=BRAF];
+		ETV1	[label=ETV1];
+		EZH2	[label=EZH2];
+		KMT2C	[label=KMT2C];
+		BUB3	[label=BUB3];
+		FGFR2	[label=FGFR2];
+	}
+	subgraph cluster_4 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 4",
+			rank=same
+		];
+		BCL6	[label=BCL6];
+		EIF4A2	[label=EIF4A2];
+		ETV5	[label=ETV5];
+		FNDC3B	[label=FNDC3B];
+		KLHL6	[label=KLHL6];
+		MB21D2	[label=MB21D2];
+		MECOM	[label=MECOM];
+		PIK3CA	[label=PIK3CA];
+		TBL1XR1	[label=TBL1XR1];
+		TFRC	[label=TFRC];
+		TP63	[label=TP63];
+		BMPR1A	[label=BMPR1A];
+		GATA3	[label=GATA3];
+		KAT6B	[label=KAT6B];
+		NUTM2D	[label=NUTM2D];
+		PTEN	[label=PTEN];
+		PTK6	[label=PTK6];
+	}
+	subgraph cluster_5 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 5",
+			rank=same
+		];
+		CDKN2A	[label=CDKN2A];
+		JAK2	[label=JAK2];
+		PAX5	[label=PAX5];
+		PTPRD	[label=PTPRD];
+		TAF1L	[label=TAF1L];
+	}
+	INPPL1 -> NCOA2;
+	INPPL1 -> PREX2;
+	INPPL1 -> RUNX1T1;
+	NUMA1 -> NCOA2;
+	NUMA1 -> PREX2;
+	NUMA1 -> RUNX1T1;
+	NCOA2 -> ELN;
+	NCOA2 -> GTF2I;
+	NCOA2 -> HIP1;
+	NCOA2 -> BRAF;
+	NCOA2 -> ETV1;
+	NCOA2 -> EZH2;
+	NCOA2 -> KMT2C;
+	NCOA2 -> BUB3;
+	NCOA2 -> FGFR2;
+	PREX2 -> ELN;
+	PREX2 -> GTF2I;
+	PREX2 -> HIP1;
+	PREX2 -> BRAF;
+	PREX2 -> ETV1;
+	PREX2 -> EZH2;
+	PREX2 -> KMT2C;
+	PREX2 -> BUB3;
+	PREX2 -> FGFR2;
+	RUNX1T1 -> ELN;
+	RUNX1T1 -> GTF2I;
+	RUNX1T1 -> HIP1;
+	RUNX1T1 -> BRAF;
+	RUNX1T1 -> ETV1;
+	RUNX1T1 -> EZH2;
+	RUNX1T1 -> KMT2C;
+	RUNX1T1 -> BUB3;
+	RUNX1T1 -> FGFR2;
+	ELN -> BCL6;
+	ELN -> EIF4A2;
+	ELN -> ETV5;
+	ELN -> FNDC3B;
+	ELN -> KLHL6;
+	ELN -> MB21D2;
+	ELN -> MECOM;
+	ELN -> PIK3CA;
+	ELN -> TBL1XR1;
+	ELN -> TFRC;
+	ELN -> TP63;
+	ELN -> BMPR1A;
+	ELN -> GATA3;
+	ELN -> KAT6B;
+	ELN -> NUTM2D;
+	ELN -> PTEN;
+	ELN -> PTK6;
+	GTF2I -> BCL6;
+	GTF2I -> EIF4A2;
+	GTF2I -> ETV5;
+	GTF2I -> FNDC3B;
+	GTF2I -> KLHL6;
+	GTF2I -> MB21D2;
+	GTF2I -> MECOM;
+	GTF2I -> PIK3CA;
+	GTF2I -> TBL1XR1;
+	GTF2I -> TFRC;
+	GTF2I -> TP63;
+	GTF2I -> BMPR1A;
+	GTF2I -> GATA3;
+	GTF2I -> KAT6B;
+	GTF2I -> NUTM2D;
+	GTF2I -> PTEN;
+	GTF2I -> PTK6;
+	HIP1 -> BCL6;
+	HIP1 -> EIF4A2;
+	HIP1 -> ETV5;
+	HIP1 -> FNDC3B;
+	HIP1 -> KLHL6;
+	HIP1 -> MB21D2;
+	HIP1 -> MECOM;
+	HIP1 -> PIK3CA;
+	HIP1 -> TBL1XR1;
+	HIP1 -> TFRC;
+	HIP1 -> TP63;
+	HIP1 -> BMPR1A;
+	HIP1 -> GATA3;
+	HIP1 -> KAT6B;
+	HIP1 -> NUTM2D;
+	HIP1 -> PTEN;
+	HIP1 -> PTK6;
+	BRAF -> BCL6;
+	BRAF -> EIF4A2;
+	BRAF -> ETV5;
+	BRAF -> FNDC3B;
+	BRAF -> KLHL6;
+	BRAF -> MB21D2;
+	BRAF -> MECOM;
+	BRAF -> PIK3CA;
+	BRAF -> TBL1XR1;
+	BRAF -> TFRC;
+	BRAF -> TP63;
+	BRAF -> BMPR1A;
+	BRAF -> GATA3;
+	BRAF -> KAT6B;
+	BRAF -> NUTM2D;
+	BRAF -> PTEN;
+	BRAF -> PTK6;
+	ETV1 -> BCL6;
+	ETV1 -> EIF4A2;
+	ETV1 -> ETV5;
+	ETV1 -> FNDC3B;
+	ETV1 -> KLHL6;
+	ETV1 -> MB21D2;
+	ETV1 -> MECOM;
+	ETV1 -> PIK3CA;
+	ETV1 -> TBL1XR1;
+	ETV1 -> TFRC;
+	ETV1 -> TP63;
+	ETV1 -> BMPR1A;
+	ETV1 -> GATA3;
+	ETV1 -> KAT6B;
+	ETV1 -> NUTM2D;
+	ETV1 -> PTEN;
+	ETV1 -> PTK6;
+	EZH2 -> BCL6;
+	EZH2 -> EIF4A2;
+	EZH2 -> ETV5;
+	EZH2 -> FNDC3B;
+	EZH2 -> KLHL6;
+	EZH2 -> MB21D2;
+	EZH2 -> MECOM;
+	EZH2 -> PIK3CA;
+	EZH2 -> TBL1XR1;
+	EZH2 -> TFRC;
+	EZH2 -> TP63;
+	EZH2 -> BMPR1A;
+	EZH2 -> GATA3;
+	EZH2 -> KAT6B;
+	EZH2 -> NUTM2D;
+	EZH2 -> PTEN;
+	EZH2 -> PTK6;
+	KMT2C -> BCL6;
+	KMT2C -> EIF4A2;
+	KMT2C -> ETV5;
+	KMT2C -> FNDC3B;
+	KMT2C -> KLHL6;
+	KMT2C -> MB21D2;
+	KMT2C -> MECOM;
+	KMT2C -> PIK3CA;
+	KMT2C -> TBL1XR1;
+	KMT2C -> TFRC;
+	KMT2C -> TP63;
+	KMT2C -> BMPR1A;
+	KMT2C -> GATA3;
+	KMT2C -> KAT6B;
+	KMT2C -> NUTM2D;
+	KMT2C -> PTEN;
+	KMT2C -> PTK6;
+	BUB3 -> BCL6;
+	BUB3 -> EIF4A2;
+	BUB3 -> ETV5;
+	BUB3 -> FNDC3B;
+	BUB3 -> KLHL6;
+	BUB3 -> MB21D2;
+	BUB3 -> MECOM;
+	BUB3 -> PIK3CA;
+	BUB3 -> TBL1XR1;
+	BUB3 -> TFRC;
+	BUB3 -> TP63;
+	BUB3 -> BMPR1A;
+	BUB3 -> GATA3;
+	BUB3 -> KAT6B;
+	BUB3 -> NUTM2D;
+	BUB3 -> PTEN;
+	BUB3 -> PTK6;
+	FGFR2 -> BCL6;
+	FGFR2 -> EIF4A2;
+	FGFR2 -> ETV5;
+	FGFR2 -> FNDC3B;
+	FGFR2 -> KLHL6;
+	FGFR2 -> MB21D2;
+	FGFR2 -> MECOM;
+	FGFR2 -> PIK3CA;
+	FGFR2 -> TBL1XR1;
+	FGFR2 -> TFRC;
+	FGFR2 -> TP63;
+	FGFR2 -> BMPR1A;
+	FGFR2 -> GATA3;
+	FGFR2 -> KAT6B;
+	FGFR2 -> NUTM2D;
+	FGFR2 -> PTEN;
+	FGFR2 -> PTK6;
+	BCL6 -> CDKN2A;
+	BCL6 -> JAK2;
+	BCL6 -> PAX5;
+	BCL6 -> PTPRD;
+	BCL6 -> TAF1L;
+	EIF4A2 -> CDKN2A;
+	EIF4A2 -> JAK2;
+	EIF4A2 -> PAX5;
+	EIF4A2 -> PTPRD;
+	EIF4A2 -> TAF1L;
+	ETV5 -> CDKN2A;
+	ETV5 -> JAK2;
+	ETV5 -> PAX5;
+	ETV5 -> PTPRD;
+	ETV5 -> TAF1L;
+	FNDC3B -> CDKN2A;
+	FNDC3B -> JAK2;
+	FNDC3B -> PAX5;
+	FNDC3B -> PTPRD;
+	FNDC3B -> TAF1L;
+	KLHL6 -> CDKN2A;
+	KLHL6 -> JAK2;
+	KLHL6 -> PAX5;
+	KLHL6 -> PTPRD;
+	KLHL6 -> TAF1L;
+	MB21D2 -> CDKN2A;
+	MB21D2 -> JAK2;
+	MB21D2 -> PAX5;
+	MB21D2 -> PTPRD;
+	MB21D2 -> TAF1L;
+	MECOM -> CDKN2A;
+	MECOM -> JAK2;
+	MECOM -> PAX5;
+	MECOM -> PTPRD;
+	MECOM -> TAF1L;
+	PIK3CA -> CDKN2A;
+	PIK3CA -> JAK2;
+	PIK3CA -> PAX5;
+	PIK3CA -> PTPRD;
+	PIK3CA -> TAF1L;
+	TBL1XR1 -> CDKN2A;
+	TBL1XR1 -> JAK2;
+	TBL1XR1 -> PAX5;
+	TBL1XR1 -> PTPRD;
+	TBL1XR1 -> TAF1L;
+	TFRC -> CDKN2A;
+	TFRC -> JAK2;
+	TFRC -> PAX5;
+	TFRC -> PTPRD;
+	TFRC -> TAF1L;
+	TP63 -> CDKN2A;
+	TP63 -> JAK2;
+	TP63 -> PAX5;
+	TP63 -> PTPRD;
+	TP63 -> TAF1L;
+	BMPR1A -> CDKN2A;
+	BMPR1A -> JAK2;
+	BMPR1A -> PAX5;
+	BMPR1A -> PTPRD;
+	BMPR1A -> TAF1L;
+	GATA3 -> CDKN2A;
+	GATA3 -> JAK2;
+	GATA3 -> PAX5;
+	GATA3 -> PTPRD;
+	GATA3 -> TAF1L;
+	KAT6B -> CDKN2A;
+	KAT6B -> JAK2;
+	KAT6B -> PAX5;
+	KAT6B -> PTPRD;
+	KAT6B -> TAF1L;
+	NUTM2D -> CDKN2A;
+	NUTM2D -> JAK2;
+	NUTM2D -> PAX5;
+	NUTM2D -> PTPRD;
+	NUTM2D -> TAF1L;
+	PTEN -> CDKN2A;
+	PTEN -> JAK2;
+	PTEN -> PAX5;
+	PTEN -> PTPRD;
+	PTEN -> TAF1L;
+	PTK6 -> CDKN2A;
+	PTK6 -> JAK2;
+	PTK6 -> PAX5;
+	PTK6 -> PTPRD;
+	PTK6 -> TAF1L;
+}
