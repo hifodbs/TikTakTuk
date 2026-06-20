@@ -1,532 +1,894 @@
 digraph {
-	rankdir=TB
-	ranksep=2.5
-	nodesep=0.4
-	node [fillcolor=aliceblue fontname=Helvetica fontsize=11 margin="0.2,0.1" shape=box style="rounded,filled"]
-	subgraph rank_1 {
-		rank=same
+	graph [nodesep=0.2,
+		rankdir=TB,
+		ranksep=2.5
+	];
+	node [fontsize=14,
+		height=0.5,
+		shape=box,
+		width=0.3
+	];
+	subgraph cluster_1 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 1",
+			rank=same
+		];
 		"RB1
-(W: 18.0)" [label="RB1
-(W: 18.0)"]
+[CNA_driver]
+W= 18.0, #= 3"	[label="RB1
+[CNA_driver]
+W= 18.0, #= 3"];
 		"ARID1A
-(W: 12.0)" [label="ARID1A
-(W: 12.0)"]
+[CNA_driver]
+W= 12.0, #= 2"	[label="ARID1A
+[CNA_driver]
+W= 12.0, #= 2"];
 		"BRCA1
-(W: 12.0)" [label="BRCA1
-(W: 12.0)"]
+[CNA_driver]
+W= 12.0, #= 2"	[label="BRCA1
+[CNA_driver]
+W= 12.0, #= 2"];
 		"NF1
-(W: 12.0)" [label="NF1
-(W: 12.0)"]
+[CNA_driver]
+W= 12.0, #= 2"	[label="NF1
+[CNA_driver]
+W= 12.0, #= 2"];
 		"STAG1
-(W: 9.0)" [label="STAG1
-(W: 9.0)"]
+[CI_M]
+W= 9.0, #= 5"	[label="STAG1
+[CI_M]
+W= 9.0, #= 5"];
 		"CDK12
-(W: 8.0)" [label="CDK12
-(W: 8.0)"]
+[M]
+W= 8.0, #= 1"	[label="CDK12
+[M]
+W= 8.0, #= 1"];
 		"KIF2A
-(W: 6.5)" [label="KIF2A
-(W: 6.5)"]
+[CI_M]
+W= 6.5, #= 4"	[label="KIF2A
+[CI_M]
+W= 6.5, #= 4"];
 		"LATS1
-(W: 6.0)" [label="LATS1
-(W: 6.0)"]
+[M]
+W= 6.0, #= 1"	[label="LATS1
+[M]
+W= 6.0, #= 1"];
 		"NF2
-(W: 6.0)" [label="NF2
-(W: 6.0)"]
+[M]
+W= 6.0, #= 1"	[label="NF2
+[M]
+W= 6.0, #= 1"];
 		"TP53
-(W: 6.0)" [label="TP53
-(W: 6.0)"]
+[M]
+W= 6.0, #= 1"	[label="TP53
+[M]
+W= 6.0, #= 1"];
 		"CREBBP
-(W: 6.0)" [label="CREBBP
-(W: 6.0)"]
+[CNA_driver]
+W= 6.0, #= 1"	[label="CREBBP
+[CNA_driver]
+W= 6.0, #= 1"];
 		"CBFB
-(W: 6.0)" [label="CBFB
-(W: 6.0)"]
+[M]
+W= 6.0, #= 1"	[label="CBFB
+[M]
+W= 6.0, #= 1"];
 		"PIK3CA
-(W: 4.0)" [label="PIK3CA
-(W: 4.0)"]
+[M]
+W= 4.0, #= 1"	[label="PIK3CA
+[M]
+W= 4.0, #= 1"];
 		"KMT2D
-(W: 4.0)" [label="KMT2D
-(W: 4.0)"]
+[M]
+W= 4.0, #= 1"	[label="KMT2D
+[M]
+W= 4.0, #= 1"];
 		"ATM
-(W: 2.0)" [label="ATM
-(W: 2.0)"]
+[CI_M]
+W= 2.0, #= 2"	[label="ATM
+[CI_M]
+W= 2.0, #= 2"];
 	}
-	subgraph rank_2 {
-		rank=same
+	subgraph cluster_2 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 2",
+			rank=same
+		];
 		"TP53
-(W: 18.0)" [label="TP53
-(W: 18.0)"]
+[M]
+W= 18.0, #= 3"	[label="TP53
+[M]
+W= 18.0, #= 3"];
 		"ARID1A
-(W: 6.0)" [label="ARID1A
-(W: 6.0)"]
+[CNA_driver]
+W= 6.0, #= 1"	[label="ARID1A
+[CNA_driver]
+W= 6.0, #= 1"];
 		"ARID1B
-(W: 6.0)" [label="ARID1B
-(W: 6.0)"]
+[M]
+W= 6.0, #= 1"	[label="ARID1B
+[M]
+W= 6.0, #= 1"];
 		"BRCA1
-(W: 6.0)" [label="BRCA1
-(W: 6.0)"]
+[CNA_driver]
+W= 6.0, #= 1"	[label="BRCA1
+[CNA_driver]
+W= 6.0, #= 1"];
 		"SMAD4
-(W: 4.0)" [label="SMAD4
-(W: 4.0)"]
+[M]
+W= 4.0, #= 1"	[label="SMAD4
+[M]
+W= 4.0, #= 1"];
 		"ATM
-(W: 2.0)" [label="ATM
-(W: 2.0)"]
+[CI_M]
+W= 2.0, #= 1"	[label="ATM
+[CI_M]
+W= 2.0, #= 1"];
 		"STAG1
-(W: 2.0)" [label="STAG1
-(W: 2.0)"]
+[CI_M]
+W= 2.0, #= 2"	[label="STAG1
+[CI_M]
+W= 2.0, #= 2"];
 		"BUB1
-(W: 1.5)" [label="BUB1
-(W: 1.5)"]
+[CI_M]
+W= 1.5, #= 1"	[label="BUB1
+[CI_M]
+W= 1.5, #= 1"];
 		"BUB3
-(W: 1.5)" [label="BUB3
-(W: 1.5)"]
+[CI_M]
+W= 1.5, #= 1"	[label="BUB3
+[CI_M]
+W= 1.5, #= 1"];
 	}
-	subgraph rank_3 {
-		rank=same
+	subgraph cluster_3 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 3",
+			rank=same
+		];
 		"DIS3
-(W: 6.0)" [label="DIS3
-(W: 6.0)"]
+[M]
+W= 6.0, #= 1"	[label="DIS3
+[M]
+W= 6.0, #= 1"];
 	}
-	subgraph rank_4 {
-		rank=same
+	subgraph cluster_4 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 4",
+			rank=same
+		];
 		"SMC3
-(W: 1.0)" [label="SMC3
-(W: 1.0)"]
+[CI_M]
+W= 1.0, #= 1"	[label="SMC3
+[CI_M]
+W= 1.0, #= 1"];
 	}
-	edge [arrowsize=0.6 color=gray75 penwidth=0.8]
 	"RB1
-(W":" 18.0)" -> "TP53
-(W":" 18.0)"
+[CNA_driver]
+W= 18.0, #= 3" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"RB1
-(W":" 18.0)" -> "ARID1A
-(W":" 6.0)"
+[CNA_driver]
+W= 18.0, #= 3" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"RB1
-(W":" 18.0)" -> "ARID1B
-(W":" 6.0)"
+[CNA_driver]
+W= 18.0, #= 3" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"RB1
-(W":" 18.0)" -> "BRCA1
-(W":" 6.0)"
+[CNA_driver]
+W= 18.0, #= 3" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"RB1
-(W":" 18.0)" -> "SMAD4
-(W":" 4.0)"
+[CNA_driver]
+W= 18.0, #= 3" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"RB1
-(W":" 18.0)" -> "ATM
-(W":" 2.0)"
+[CNA_driver]
+W= 18.0, #= 3" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"RB1
-(W":" 18.0)" -> "STAG1
-(W":" 2.0)"
+[CNA_driver]
+W= 18.0, #= 3" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"RB1
-(W":" 18.0)" -> "BUB1
-(W":" 1.5)"
+[CNA_driver]
+W= 18.0, #= 3" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"RB1
-(W":" 18.0)" -> "BUB3
-(W":" 1.5)"
+[CNA_driver]
+W= 18.0, #= 3" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"ARID1A
-(W":" 12.0)" -> "TP53
-(W":" 18.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"ARID1A
-(W":" 12.0)" -> "ARID1A
-(W":" 6.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"ARID1A
-(W":" 12.0)" -> "ARID1B
-(W":" 6.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"ARID1A
-(W":" 12.0)" -> "BRCA1
-(W":" 6.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"ARID1A
-(W":" 12.0)" -> "SMAD4
-(W":" 4.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"ARID1A
-(W":" 12.0)" -> "ATM
-(W":" 2.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"ARID1A
-(W":" 12.0)" -> "STAG1
-(W":" 2.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"ARID1A
-(W":" 12.0)" -> "BUB1
-(W":" 1.5)"
+[CNA_driver]
+W= 12.0, #= 2" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"ARID1A
-(W":" 12.0)" -> "BUB3
-(W":" 1.5)"
+[CNA_driver]
+W= 12.0, #= 2" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"BRCA1
-(W":" 12.0)" -> "TP53
-(W":" 18.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"BRCA1
-(W":" 12.0)" -> "ARID1A
-(W":" 6.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"BRCA1
-(W":" 12.0)" -> "ARID1B
-(W":" 6.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"BRCA1
-(W":" 12.0)" -> "BRCA1
-(W":" 6.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"BRCA1
-(W":" 12.0)" -> "SMAD4
-(W":" 4.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"BRCA1
-(W":" 12.0)" -> "ATM
-(W":" 2.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"BRCA1
-(W":" 12.0)" -> "STAG1
-(W":" 2.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"BRCA1
-(W":" 12.0)" -> "BUB1
-(W":" 1.5)"
+[CNA_driver]
+W= 12.0, #= 2" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"BRCA1
-(W":" 12.0)" -> "BUB3
-(W":" 1.5)"
+[CNA_driver]
+W= 12.0, #= 2" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"NF1
-(W":" 12.0)" -> "TP53
-(W":" 18.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"NF1
-(W":" 12.0)" -> "ARID1A
-(W":" 6.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"NF1
-(W":" 12.0)" -> "ARID1B
-(W":" 6.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"NF1
-(W":" 12.0)" -> "BRCA1
-(W":" 6.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"NF1
-(W":" 12.0)" -> "SMAD4
-(W":" 4.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"NF1
-(W":" 12.0)" -> "ATM
-(W":" 2.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"NF1
-(W":" 12.0)" -> "STAG1
-(W":" 2.0)"
+[CNA_driver]
+W= 12.0, #= 2" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"NF1
-(W":" 12.0)" -> "BUB1
-(W":" 1.5)"
+[CNA_driver]
+W= 12.0, #= 2" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"NF1
-(W":" 12.0)" -> "BUB3
-(W":" 1.5)"
+[CNA_driver]
+W= 12.0, #= 2" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"STAG1
-(W":" 9.0)" -> "TP53
-(W":" 18.0)"
+[CI_M]
+W= 9.0, #= 5" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"STAG1
-(W":" 9.0)" -> "ARID1A
-(W":" 6.0)"
+[CI_M]
+W= 9.0, #= 5" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"STAG1
-(W":" 9.0)" -> "ARID1B
-(W":" 6.0)"
+[CI_M]
+W= 9.0, #= 5" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"STAG1
-(W":" 9.0)" -> "BRCA1
-(W":" 6.0)"
+[CI_M]
+W= 9.0, #= 5" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"STAG1
-(W":" 9.0)" -> "SMAD4
-(W":" 4.0)"
+[CI_M]
+W= 9.0, #= 5" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"STAG1
-(W":" 9.0)" -> "ATM
-(W":" 2.0)"
+[CI_M]
+W= 9.0, #= 5" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"STAG1
-(W":" 9.0)" -> "STAG1
-(W":" 2.0)"
+[CI_M]
+W= 9.0, #= 5" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"STAG1
-(W":" 9.0)" -> "BUB1
-(W":" 1.5)"
+[CI_M]
+W= 9.0, #= 5" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"STAG1
-(W":" 9.0)" -> "BUB3
-(W":" 1.5)"
+[CI_M]
+W= 9.0, #= 5" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"CDK12
-(W":" 8.0)" -> "TP53
-(W":" 18.0)"
+[M]
+W= 8.0, #= 1" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"CDK12
-(W":" 8.0)" -> "ARID1A
-(W":" 6.0)"
+[M]
+W= 8.0, #= 1" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"CDK12
-(W":" 8.0)" -> "ARID1B
-(W":" 6.0)"
+[M]
+W= 8.0, #= 1" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"CDK12
-(W":" 8.0)" -> "BRCA1
-(W":" 6.0)"
+[M]
+W= 8.0, #= 1" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"CDK12
-(W":" 8.0)" -> "SMAD4
-(W":" 4.0)"
+[M]
+W= 8.0, #= 1" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"CDK12
-(W":" 8.0)" -> "ATM
-(W":" 2.0)"
+[M]
+W= 8.0, #= 1" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"CDK12
-(W":" 8.0)" -> "STAG1
-(W":" 2.0)"
+[M]
+W= 8.0, #= 1" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"CDK12
-(W":" 8.0)" -> "BUB1
-(W":" 1.5)"
+[M]
+W= 8.0, #= 1" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"CDK12
-(W":" 8.0)" -> "BUB3
-(W":" 1.5)"
+[M]
+W= 8.0, #= 1" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"KIF2A
-(W":" 6.5)" -> "TP53
-(W":" 18.0)"
+[CI_M]
+W= 6.5, #= 4" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"KIF2A
-(W":" 6.5)" -> "ARID1A
-(W":" 6.0)"
+[CI_M]
+W= 6.5, #= 4" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"KIF2A
-(W":" 6.5)" -> "ARID1B
-(W":" 6.0)"
+[CI_M]
+W= 6.5, #= 4" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"KIF2A
-(W":" 6.5)" -> "BRCA1
-(W":" 6.0)"
+[CI_M]
+W= 6.5, #= 4" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"KIF2A
-(W":" 6.5)" -> "SMAD4
-(W":" 4.0)"
+[CI_M]
+W= 6.5, #= 4" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"KIF2A
-(W":" 6.5)" -> "ATM
-(W":" 2.0)"
+[CI_M]
+W= 6.5, #= 4" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"KIF2A
-(W":" 6.5)" -> "STAG1
-(W":" 2.0)"
+[CI_M]
+W= 6.5, #= 4" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"KIF2A
-(W":" 6.5)" -> "BUB1
-(W":" 1.5)"
+[CI_M]
+W= 6.5, #= 4" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"KIF2A
-(W":" 6.5)" -> "BUB3
-(W":" 1.5)"
+[CI_M]
+W= 6.5, #= 4" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"LATS1
-(W":" 6.0)" -> "TP53
-(W":" 18.0)"
+[M]
+W= 6.0, #= 1" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"LATS1
-(W":" 6.0)" -> "ARID1A
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"LATS1
-(W":" 6.0)" -> "ARID1B
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"LATS1
-(W":" 6.0)" -> "BRCA1
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"LATS1
-(W":" 6.0)" -> "SMAD4
-(W":" 4.0)"
+[M]
+W= 6.0, #= 1" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"LATS1
-(W":" 6.0)" -> "ATM
-(W":" 2.0)"
+[M]
+W= 6.0, #= 1" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"LATS1
-(W":" 6.0)" -> "STAG1
-(W":" 2.0)"
+[M]
+W= 6.0, #= 1" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"LATS1
-(W":" 6.0)" -> "BUB1
-(W":" 1.5)"
+[M]
+W= 6.0, #= 1" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"LATS1
-(W":" 6.0)" -> "BUB3
-(W":" 1.5)"
+[M]
+W= 6.0, #= 1" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"NF2
-(W":" 6.0)" -> "TP53
-(W":" 18.0)"
+[M]
+W= 6.0, #= 1" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"NF2
-(W":" 6.0)" -> "ARID1A
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"NF2
-(W":" 6.0)" -> "ARID1B
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"NF2
-(W":" 6.0)" -> "BRCA1
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"NF2
-(W":" 6.0)" -> "SMAD4
-(W":" 4.0)"
+[M]
+W= 6.0, #= 1" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"NF2
-(W":" 6.0)" -> "ATM
-(W":" 2.0)"
+[M]
+W= 6.0, #= 1" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"NF2
-(W":" 6.0)" -> "STAG1
-(W":" 2.0)"
+[M]
+W= 6.0, #= 1" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"NF2
-(W":" 6.0)" -> "BUB1
-(W":" 1.5)"
+[M]
+W= 6.0, #= 1" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"NF2
-(W":" 6.0)" -> "BUB3
-(W":" 1.5)"
+[M]
+W= 6.0, #= 1" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"TP53
-(W":" 6.0)" -> "TP53
-(W":" 18.0)"
+[M]
+W= 6.0, #= 1" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"TP53
-(W":" 6.0)" -> "ARID1A
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"TP53
-(W":" 6.0)" -> "ARID1B
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"TP53
-(W":" 6.0)" -> "BRCA1
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"TP53
-(W":" 6.0)" -> "SMAD4
-(W":" 4.0)"
+[M]
+W= 6.0, #= 1" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"TP53
-(W":" 6.0)" -> "ATM
-(W":" 2.0)"
+[M]
+W= 6.0, #= 1" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"TP53
-(W":" 6.0)" -> "STAG1
-(W":" 2.0)"
+[M]
+W= 6.0, #= 1" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"TP53
-(W":" 6.0)" -> "BUB1
-(W":" 1.5)"
+[M]
+W= 6.0, #= 1" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"TP53
-(W":" 6.0)" -> "BUB3
-(W":" 1.5)"
+[M]
+W= 6.0, #= 1" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"CREBBP
-(W":" 6.0)" -> "TP53
-(W":" 18.0)"
+[CNA_driver]
+W= 6.0, #= 1" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"CREBBP
-(W":" 6.0)" -> "ARID1A
-(W":" 6.0)"
+[CNA_driver]
+W= 6.0, #= 1" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"CREBBP
-(W":" 6.0)" -> "ARID1B
-(W":" 6.0)"
+[CNA_driver]
+W= 6.0, #= 1" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"CREBBP
-(W":" 6.0)" -> "BRCA1
-(W":" 6.0)"
+[CNA_driver]
+W= 6.0, #= 1" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"CREBBP
-(W":" 6.0)" -> "SMAD4
-(W":" 4.0)"
+[CNA_driver]
+W= 6.0, #= 1" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"CREBBP
-(W":" 6.0)" -> "ATM
-(W":" 2.0)"
+[CNA_driver]
+W= 6.0, #= 1" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"CREBBP
-(W":" 6.0)" -> "STAG1
-(W":" 2.0)"
+[CNA_driver]
+W= 6.0, #= 1" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"CREBBP
-(W":" 6.0)" -> "BUB1
-(W":" 1.5)"
+[CNA_driver]
+W= 6.0, #= 1" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"CREBBP
-(W":" 6.0)" -> "BUB3
-(W":" 1.5)"
+[CNA_driver]
+W= 6.0, #= 1" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"CBFB
-(W":" 6.0)" -> "TP53
-(W":" 18.0)"
+[M]
+W= 6.0, #= 1" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"CBFB
-(W":" 6.0)" -> "ARID1A
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"CBFB
-(W":" 6.0)" -> "ARID1B
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"CBFB
-(W":" 6.0)" -> "BRCA1
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"CBFB
-(W":" 6.0)" -> "SMAD4
-(W":" 4.0)"
+[M]
+W= 6.0, #= 1" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"CBFB
-(W":" 6.0)" -> "ATM
-(W":" 2.0)"
+[M]
+W= 6.0, #= 1" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"CBFB
-(W":" 6.0)" -> "STAG1
-(W":" 2.0)"
+[M]
+W= 6.0, #= 1" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"CBFB
-(W":" 6.0)" -> "BUB1
-(W":" 1.5)"
+[M]
+W= 6.0, #= 1" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"CBFB
-(W":" 6.0)" -> "BUB3
-(W":" 1.5)"
+[M]
+W= 6.0, #= 1" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"PIK3CA
-(W":" 4.0)" -> "TP53
-(W":" 18.0)"
+[M]
+W= 4.0, #= 1" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"PIK3CA
-(W":" 4.0)" -> "ARID1A
-(W":" 6.0)"
+[M]
+W= 4.0, #= 1" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"PIK3CA
-(W":" 4.0)" -> "ARID1B
-(W":" 6.0)"
+[M]
+W= 4.0, #= 1" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"PIK3CA
-(W":" 4.0)" -> "BRCA1
-(W":" 6.0)"
+[M]
+W= 4.0, #= 1" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"PIK3CA
-(W":" 4.0)" -> "SMAD4
-(W":" 4.0)"
+[M]
+W= 4.0, #= 1" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"PIK3CA
-(W":" 4.0)" -> "ATM
-(W":" 2.0)"
+[M]
+W= 4.0, #= 1" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"PIK3CA
-(W":" 4.0)" -> "STAG1
-(W":" 2.0)"
+[M]
+W= 4.0, #= 1" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"PIK3CA
-(W":" 4.0)" -> "BUB1
-(W":" 1.5)"
+[M]
+W= 4.0, #= 1" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"PIK3CA
-(W":" 4.0)" -> "BUB3
-(W":" 1.5)"
+[M]
+W= 4.0, #= 1" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"KMT2D
-(W":" 4.0)" -> "TP53
-(W":" 18.0)"
+[M]
+W= 4.0, #= 1" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"KMT2D
-(W":" 4.0)" -> "ARID1A
-(W":" 6.0)"
+[M]
+W= 4.0, #= 1" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"KMT2D
-(W":" 4.0)" -> "ARID1B
-(W":" 6.0)"
+[M]
+W= 4.0, #= 1" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"KMT2D
-(W":" 4.0)" -> "BRCA1
-(W":" 6.0)"
+[M]
+W= 4.0, #= 1" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"KMT2D
-(W":" 4.0)" -> "SMAD4
-(W":" 4.0)"
+[M]
+W= 4.0, #= 1" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"KMT2D
-(W":" 4.0)" -> "ATM
-(W":" 2.0)"
+[M]
+W= 4.0, #= 1" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"KMT2D
-(W":" 4.0)" -> "STAG1
-(W":" 2.0)"
+[M]
+W= 4.0, #= 1" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"KMT2D
-(W":" 4.0)" -> "BUB1
-(W":" 1.5)"
+[M]
+W= 4.0, #= 1" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"KMT2D
-(W":" 4.0)" -> "BUB3
-(W":" 1.5)"
+[M]
+W= 4.0, #= 1" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"ATM
-(W":" 2.0)" -> "TP53
-(W":" 18.0)"
+[CI_M]
+W= 2.0, #= 2" -> "TP53
+[M]
+W= 18.0, #= 3";
 	"ATM
-(W":" 2.0)" -> "ARID1A
-(W":" 6.0)"
+[CI_M]
+W= 2.0, #= 2" -> "ARID1A
+[CNA_driver]
+W= 6.0, #= 1";
 	"ATM
-(W":" 2.0)" -> "ARID1B
-(W":" 6.0)"
+[CI_M]
+W= 2.0, #= 2" -> "ARID1B
+[M]
+W= 6.0, #= 1";
 	"ATM
-(W":" 2.0)" -> "BRCA1
-(W":" 6.0)"
+[CI_M]
+W= 2.0, #= 2" -> "BRCA1
+[CNA_driver]
+W= 6.0, #= 1";
 	"ATM
-(W":" 2.0)" -> "SMAD4
-(W":" 4.0)"
+[CI_M]
+W= 2.0, #= 2" -> "SMAD4
+[M]
+W= 4.0, #= 1";
 	"ATM
-(W":" 2.0)" -> "ATM
-(W":" 2.0)"
+[CI_M]
+W= 2.0, #= 2" -> "ATM
+[CI_M]
+W= 2.0, #= 1";
 	"ATM
-(W":" 2.0)" -> "STAG1
-(W":" 2.0)"
+[CI_M]
+W= 2.0, #= 2" -> "STAG1
+[CI_M]
+W= 2.0, #= 2";
 	"ATM
-(W":" 2.0)" -> "BUB1
-(W":" 1.5)"
+[CI_M]
+W= 2.0, #= 2" -> "BUB1
+[CI_M]
+W= 1.5, #= 1";
 	"ATM
-(W":" 2.0)" -> "BUB3
-(W":" 1.5)"
+[CI_M]
+W= 2.0, #= 2" -> "BUB3
+[CI_M]
+W= 1.5, #= 1";
 	"TP53
-(W":" 18.0)" -> "DIS3
-(W":" 6.0)"
+[M]
+W= 18.0, #= 3" -> "DIS3
+[M]
+W= 6.0, #= 1";
 	"ARID1A
-(W":" 6.0)" -> "DIS3
-(W":" 6.0)"
+[CNA_driver]
+W= 6.0, #= 1" -> "DIS3
+[M]
+W= 6.0, #= 1";
 	"ARID1B
-(W":" 6.0)" -> "DIS3
-(W":" 6.0)"
+[M]
+W= 6.0, #= 1" -> "DIS3
+[M]
+W= 6.0, #= 1";
 	"BRCA1
-(W":" 6.0)" -> "DIS3
-(W":" 6.0)"
+[CNA_driver]
+W= 6.0, #= 1" -> "DIS3
+[M]
+W= 6.0, #= 1";
 	"SMAD4
-(W":" 4.0)" -> "DIS3
-(W":" 6.0)"
+[M]
+W= 4.0, #= 1" -> "DIS3
+[M]
+W= 6.0, #= 1";
 	"ATM
-(W":" 2.0)" -> "DIS3
-(W":" 6.0)"
+[CI_M]
+W= 2.0, #= 1" -> "DIS3
+[M]
+W= 6.0, #= 1";
 	"STAG1
-(W":" 2.0)" -> "DIS3
-(W":" 6.0)"
+[CI_M]
+W= 2.0, #= 2" -> "DIS3
+[M]
+W= 6.0, #= 1";
 	"BUB1
-(W":" 1.5)" -> "DIS3
-(W":" 6.0)"
+[CI_M]
+W= 1.5, #= 1" -> "DIS3
+[M]
+W= 6.0, #= 1";
 	"BUB3
-(W":" 1.5)" -> "DIS3
-(W":" 6.0)"
+[CI_M]
+W= 1.5, #= 1" -> "DIS3
+[M]
+W= 6.0, #= 1";
 	"DIS3
-(W":" 6.0)" -> "SMC3
-(W":" 1.0)"
+[M]
+W= 6.0, #= 1" -> "SMC3
+[CI_M]
+W= 1.0, #= 1"	[minlen=1];
 }
