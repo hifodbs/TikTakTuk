@@ -1,1 +1,11 @@
 matteo_test.ipynb
+
+# VS Code
+.vscode/
+.history/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+__init__/
