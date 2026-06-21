@@ -1,6 +1,8 @@
 import graphviz
 import os
 def print_tree(t, name):
+    
+    os.makedirs("./produced", exist_ok=True) 
     # Initialize graph
     d = graphviz.Digraph(filename="./produced/"+name)
 
