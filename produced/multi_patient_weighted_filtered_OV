@@ -19,14 +19,14 @@ digraph {
 W= 18.0 | Pts= 3"	[label="RB1
 [CNA_driver]
 W= 18.0 | Pts= 3"];
-		"ARID1A
-[CNA_driver]
-W= 12.0 | Pts= 2"	[label="ARID1A
-[CNA_driver]
-W= 12.0 | Pts= 2"];
 		"BRCA1
 [CNA_driver]
 W= 12.0 | Pts= 2"	[label="BRCA1
+[CNA_driver]
+W= 12.0 | Pts= 2"];
+		"ARID1A
+[CNA_driver]
+W= 12.0 | Pts= 2"	[label="ARID1A
 [CNA_driver]
 W= 12.0 | Pts= 2"];
 		"NF1
@@ -101,22 +101,22 @@ W= 18.0 | Pts= 3";
 W= 18.0 | Pts= 3" -> "STAG1
 [CI_M]
 W= 2.0 | Pts= 2";
-	"ARID1A
+	"BRCA1
 [CNA_driver]
 W= 12.0 | Pts= 2" -> "TP53
 [M]
 W= 18.0 | Pts= 3";
-	"ARID1A
+	"BRCA1
 [CNA_driver]
 W= 12.0 | Pts= 2" -> "STAG1
 [CI_M]
 W= 2.0 | Pts= 2";
-	"BRCA1
+	"ARID1A
 [CNA_driver]
 W= 12.0 | Pts= 2" -> "TP53
 [M]
 W= 18.0 | Pts= 3";
-	"BRCA1
+	"ARID1A
 [CNA_driver]
 W= 12.0 | Pts= 2" -> "STAG1
 [CI_M]
