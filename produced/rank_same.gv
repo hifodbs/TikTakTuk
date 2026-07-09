@@ -14,8 +14,22 @@ digraph {
 			label="Rank 1",
 			rank=same
 		];
-		"TP53 (M)"	[label="TP53 (M)"];
-		"ATR (CI_M)"	[label="ATR (CI_M)"];
+		"ARID1A (CNA_driver)"	[label="ARID1A (CNA_driver)"];
+		"RB1 (CNA_driver)"	[label="RB1 (CNA_driver)"];
 		"STAG1 (CI_M)"	[label="STAG1 (CI_M)"];
 	}
+	subgraph cluster_2 {
+		graph [color=lightgrey,
+			fontsize=16,
+			label="Rank 2",
+			rank=same
+		];
+		"BUB3 (CI_M)"	[label="BUB3 (CI_M)"];
+	}
+	"ARID1A (CNA_driver)" -> "BUB3 (CI_M)"	[minlen=1];
+	"RB1 (CNA_driver)" -> "BUB3 (CI_M)"	[minlen=2];
+	"STAG1 (CI_M)" -> "BUB3 (CI_M)";
+	"STAG1 (CI_M)" -> "BUB3 (CI_M)";
+	"STAG1 (CI_M)" -> "BUB3 (CI_M)";
+	"STAG1 (CI_M)" -> "BUB3 (CI_M)";
 }
