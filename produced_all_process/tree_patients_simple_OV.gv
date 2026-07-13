@@ -1,0 +1,106 @@
+digraph {
+	compound=true
+	nodesep=0.3 rankdir=TB ranksep=2.5
+	node [fillcolor=lightyellow fontsize=14 shape=box style=filled]
+	subgraph cluster_rank_1 {
+		rank=same
+		color=grey fontsize=20 label="Rank 1" labeljust=c style=dashed
+		subgraph cluster_R1_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_1_R1_C1 [label="Paziente 1"]
+			P_25_R1_C1 [label="Paziente 25"]
+		}
+		subgraph cluster_R1_C4 {
+			color=lightgrey label="Cluster 4" style=filled
+			P_2_R1_C4 [label="Paziente 2"]
+			P_18_R1_C4 [label="Paziente 18"]
+			P_23_R1_C4 [label="Paziente 23"]
+		}
+		subgraph cluster_R1_C8 {
+			color=lightgrey label="Cluster 8" style=filled
+			P_3_R1_C8 [label="Paziente 3"]
+			P_5_R1_C8 [label="Paziente 5"]
+		}
+		subgraph cluster_R1_C6 {
+			color=lightgrey label="Cluster 6" style=filled
+			P_4_R1_C6 [label="Paziente 4"]
+		}
+		subgraph cluster_R1_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			P_6_R1_C5 [label="Paziente 6"]
+		}
+		subgraph cluster_R1_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			P_7_R1_C3 [label="Paziente 7"]
+			P_12_R1_C3 [label="Paziente 12"]
+			P_17_R1_C3 [label="Paziente 17"]
+			P_20_R1_C3 [label="Paziente 20"]
+		}
+		subgraph cluster_R1_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			P_8_R1_C0 [label="Paziente 8"]
+			P_10_R1_C0 [label="Paziente 10"]
+			P_11_R1_C0 [label="Paziente 11"]
+		}
+		subgraph cluster_R1_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			P_13_R1_C2 [label="Paziente 13"]
+		}
+		subgraph cluster_R1_C9 {
+			color=lightgrey label="Cluster 9" style=filled
+			P_14_R1_C9 [label="Paziente 14"]
+		}
+		subgraph cluster_R1_C7 {
+			color=lightgrey label="Cluster 7" style=filled
+			P_19_R1_C7 [label="Paziente 19"]
+		}
+		subgraph cluster_R1_C10 {
+			color=lightgrey label="Cluster 10" style=filled
+			P_21_R1_C10 [label="Paziente 21"]
+		}
+	}
+	subgraph cluster_rank_2 {
+		rank=same
+		color=grey fontsize=20 label="Rank 2" labeljust=c style=dashed
+		subgraph cluster_R2_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			P_6_R2_C3 [label="Paziente 6"]
+			P_16_R2_C3 [label="Paziente 16"]
+			P_26_R2_C3 [label="Paziente 26"]
+		}
+		subgraph cluster_R2_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_9_R2_C1 [label="Paziente 9"]
+			P_22_R2_C1 [label="Paziente 22"]
+		}
+		subgraph cluster_R2_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			P_10_R2_C0 [label="Paziente 10"]
+			P_15_R2_C0 [label="Paziente 15"]
+			P_20_R2_C0 [label="Paziente 20"]
+		}
+		subgraph cluster_R2_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			P_24_R2_C2 [label="Paziente 24"]
+		}
+	}
+	subgraph cluster_rank_4 {
+		rank=same
+		color=grey fontsize=20 label="Rank 4" labeljust=c style=dashed
+		subgraph cluster_R4_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_16_R4_C1 [label="Paziente 16"]
+		}
+	}
+	subgraph cluster_rank_3 {
+		rank=same
+		color=grey fontsize=20 label="Rank 3" labeljust=c style=dashed
+		subgraph cluster_R3_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_20_R3_C1 [label="Paziente 20"]
+		}
+	}
+	P_12_R1_C3 -> P_22_R2_C1 [color="#222222" lhead=cluster_rank_2 ltail=cluster_rank_1 penwidth=2.5 weight=100]
+	P_22_R2_C1 -> P_20_R3_C1 [color="#222222" lhead=cluster_rank_3 ltail=cluster_rank_2 penwidth=2.5 weight=100]
+	P_20_R3_C1 -> P_16_R4_C1 [color="#222222" lhead=cluster_rank_4 ltail=cluster_rank_3 penwidth=2.5 weight=100]
+}

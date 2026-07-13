@@ -35,7 +35,7 @@ def plot(input, labelsels, distance_matrixes):
             X_2d = np.array([[-dist/2, 0.0], [dist/2, 0.0]])
         else:
             # Run standard MDS for 3 or more individuals
-            mds = MDS(n_components=2, metric="precomputed", random_state=42, init="random")
+            mds = MDS(n_components=2, dissimilarity="precomputed", random_state=42)
             X_2d = mds.fit_transform(distance_matrix)
 
         unique_points, inverse = np.unique(X_2d, axis=0, return_inverse=True)

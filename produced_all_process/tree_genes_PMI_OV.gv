@@ -1,0 +1,150 @@
+digraph {
+	compound=true
+	nodesep=0.3 rankdir=TB ranksep=2.5
+	node [fillcolor=lightblue fontsize=14 shape=box style=filled]
+	subgraph cluster_rank_1 {
+		rank=same
+		color=grey fontsize=20 label="Rank 1" labeljust=c style=dashed
+		subgraph cluster_R1_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			ATM_R1_C1 [label="ATM
+(1, 25)"]
+			RAD21_R1_C1 [label="RAD21
+(1)"]
+		}
+		subgraph cluster_R1_C4 {
+			color=lightgrey label="Cluster 4" style=filled
+			KIF2A_R1_C4 [label="KIF2A
+(2, 18, 23)"]
+			BUB1_R1_C4 [label="BUB1
+(18)"]
+			LATS1_R1_C4 [label="LATS1
+(18)"]
+		}
+		subgraph cluster_R1_C8 {
+			color=lightgrey label="Cluster 8" style=filled
+			NF1_R1_C8 [label="NF1
+(3, 5)"]
+			BRCA1_R1_C8 [label="BRCA1
+(5)"]
+		}
+		subgraph cluster_R1_C6 {
+			color=lightgrey label="Cluster 6" style=filled
+			PIK3CA_R1_C6 [label="PIK3CA
+(4)"]
+		}
+		subgraph cluster_R1_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			KMT2D_R1_C5 [label="KMT2D
+(6)"]
+		}
+		subgraph cluster_R1_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			STAG1_R1_C3 [label="STAG1
+(7, 12, 17, 20)"]
+			ATR_R1_C3 [label="ATR
+(17)"]
+		}
+		subgraph cluster_R1_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			NF2_R1_C0 [label="NF2
+(8)"]
+			RB1_R1_C0 [label="RB1
+(8, 10, 11)"]
+			ARID1A_R1_C0 [label="ARID1A
+(10)"]
+			STAG1_R1_C0 [label="STAG1
+(10)"]
+			CREBBP_R1_C0 [label="CREBBP
+(11)"]
+			KIF2A_R1_C0 [label="KIF2A
+(11)"]
+		}
+		subgraph cluster_R1_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			TP53_R1_C2 [label="TP53
+(13)"]
+		}
+		subgraph cluster_R1_C9 {
+			color=lightgrey label="Cluster 9" style=filled
+			CBFB_R1_C9 [label="CBFB
+(14)"]
+			CDK12_R1_C9 [label="CDK12
+(14)"]
+		}
+		subgraph cluster_R1_C7 {
+			color=lightgrey label="Cluster 7" style=filled
+			SMC3_R1_C7 [label="SMC3
+(19)"]
+		}
+		subgraph cluster_R1_C10 {
+			color=lightgrey label="Cluster 10" style=filled
+			ARID1A_R1_C10 [label="ARID1A
+(21)"]
+			BRCA1_R1_C10 [label="BRCA1
+(21)"]
+		}
+	}
+	subgraph cluster_rank_2 {
+		rank=same
+		color=grey fontsize=20 label="Rank 2" labeljust=c style=dashed
+		subgraph cluster_R2_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			BUB1_R2_C3 [label="BUB1
+(6)"]
+			TP53_R2_C3 [label="TP53
+(6, 16, 26)"]
+			ARID1A_R2_C3 [label="ARID1A
+(16)"]
+		}
+		subgraph cluster_R2_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			STAG1_R2_C1 [label="STAG1
+(9, 22)"]
+			SMAD4_R2_C1 [label="SMAD4
+(9)"]
+		}
+		subgraph cluster_R2_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			BUB3_R2_C0 [label="BUB3
+(10)"]
+			BRCA1_R2_C0 [label="BRCA1
+(15)"]
+			ATM_R2_C0 [label="ATM
+(20)"]
+		}
+		subgraph cluster_R2_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			ARID1B_R2_C2 [label="ARID1B
+(24)"]
+		}
+	}
+	subgraph cluster_rank_4 {
+		rank=same
+		color=grey fontsize=20 label="Rank 4" labeljust=c style=dashed
+		subgraph cluster_R4_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			SMC3_R4_C1 [label="SMC3
+(16)"]
+		}
+	}
+	subgraph cluster_rank_3 {
+		rank=same
+		color=grey fontsize=20 label="Rank 3" labeljust=c style=dashed
+		subgraph cluster_R3_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			DIS3_R3_C1 [label="DIS3
+(20)"]
+		}
+	}
+	KMT2D_R1_C5 -> BUB1_R2_C3 [label="1 pts
+PMI: 2.3" color="#333333" fontsize=11 lhead=cluster_R2_C3 ltail=cluster_R1_C5 penwidth=4.4828921423310435]
+	NF2_R1_C0 -> BUB3_R2_C0 [label="1 pts
+PMI: 1.3" color="#333333" fontsize=11 lhead=cluster_R2_C0 ltail=cluster_R1_C0 penwidth=2.9828921423310435]
+	STAG1_R1_C3 -> BUB3_R2_C0 [label="1 pts
+PMI: 1.3" color="#333333" fontsize=11 lhead=cluster_R2_C0 ltail=cluster_R1_C3 penwidth=2.9828921423310435]
+	BUB3_R2_C0 -> DIS3_R3_C1 [label="1 pts
+PMI: 2.3" color="#333333" fontsize=11 lhead=cluster_R3_C1 ltail=cluster_R2_C0 penwidth=4.4828921423310435]
+	BUB1_R2_C3 -> SMC3_R4_C1 [label="1 pts
+PMI: 2.3" color="#333333" fontsize=11 lhead=cluster_R4_C1 ltail=cluster_R2_C3 penwidth=4.4828921423310435]
+}

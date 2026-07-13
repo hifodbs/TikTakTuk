@@ -6,7 +6,7 @@ def weight_genes(df_filtrato):
     # funzioni per la mappatura dei pesi
 
     # Mappatura tipologia mutazione per distaccare i driver principali
-    status_weights = {'CI_M': 1.0, 'M': 2.0, 'CNA_driver': 4.0}
+    status_weights = {'CI_M': 2.0, 'M': 2.0, 'CNA_driver': 4.0}
     df_filtrato['w_status'] = df_filtrato['mutatation_status'].map(status_weights).fillna(1.0)
 
     # Moltiplicatore PCAWG (2.0 se il catalogo conferma il driver, 1.0 altrimenti)
