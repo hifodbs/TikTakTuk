@@ -209,6 +209,9 @@ def _get_first_gene_node_in_cluster(genes_dict, rank, c_id):
     return None
 
 def plot_genes_clusters_pmi(gene_clusters, pmi_edges, name):
+    import os
+    import graphviz
+    
     os.makedirs("./produced_all_process", exist_ok=True) 
     d = graphviz.Digraph(filename="./produced_all_process/"+name)
 
@@ -216,11 +219,19 @@ def plot_genes_clusters_pmi(gene_clusters, pmi_edges, name):
     d.attr(ranksep="2.5", nodesep="0.3", rankdir="TB")  
     d.attr("node", shape="box", style="filled", fillcolor="lightblue", fontsize="14")
 
+    # Dizionario per tenere traccia delle ancore di ogni Rank
+    rank_anchors = {}
+
     # 1. Disegna tutti i Cluster con i geni all'interno
     for rank, clusters in gene_clusters.items():
         with d.subgraph(name=f"cluster_rank_{rank}") as s_rank:
             s_rank.attr(rank="same")
             s_rank.attr(label=f"Rank {rank}", fontsize="20", style="dashed", color="grey", labeljust="c")
+
+            # CREAZIONE ANCORA: Un punto minuscolo e completamente invisibile
+            anchor_id = f"anchor_R{rank}"
+            s_rank.node(anchor_id, style="invis", shape="point", width="0", height="0")
+            rank_anchors[rank] = anchor_id
 
             for c_id, genes_dict in clusters.items():
                 if not genes_dict:
@@ -233,6 +244,11 @@ def plot_genes_clusters_pmi(gene_clusters, pmi_edges, name):
                         label_text = f"{gene}\n({p_string})"
                         s_cluster.node(node_id, label=label_text)
 
+    # COLLONNA VERTEBRALE INVISIBILE: Forza l'allineamento verticale dei Rank
+    sorted_ranks = sorted(rank_anchors.keys())
+    for i in range(len(sorted_ranks) - 1):
+        d.edge(rank_anchors[sorted_ranks[i]], rank_anchors[sorted_ranks[i+1]], style="invis")
+
     # 2. Crea le frecce evolutive tra cluster basate sulla PMI
     for edge in pmi_edges:
         r_s, c_s = edge['source']
@@ -244,7 +260,7 @@ def plot_genes_clusters_pmi(gene_clusters, pmi_edges, name):
         n2 = _get_first_gene_node_in_cluster(gene_clusters.get(r_t, {}).get(c_t), r_t, c_t)
         
         if n1 and n2:
-            label_text = f"{w} pts\nPMI: {pmi:.1f}"
+            label_text = f"{w} pts"  # \nPMI: {pmi:.1f}
             thickness = str(1.0 + (pmi * 1.5))
             
             d.edge(n1, n2, 
@@ -256,7 +272,6 @@ def plot_genes_clusters_pmi(gene_clusters, pmi_edges, name):
                    penwidth=thickness)
 
     d.view()
-    
     
     
 #GLOBAL 
