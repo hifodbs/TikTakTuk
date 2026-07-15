@@ -1,0 +1,849 @@
+digraph {
+	compound=true
+	nodesep=0.3 rankdir=TB ranksep=2.5
+	node [fillcolor=lightyellow fontsize=14 shape=box style=filled]
+	subgraph cluster_rank_1 {
+		rank=same
+		color=grey fontsize=20 label="Rank 1" labeljust=c style=dashed
+		subgraph cluster_R1_C25 {
+			color=lightgrey label="Cluster 25" style=filled
+			P_1_R1_C25 [label="Paziente 1"]
+			P_247_R1_C25 [label="Paziente 247"]
+		}
+		subgraph cluster_R1_C23 {
+			color=lightgrey label="Cluster 23" style=filled
+			P_2_R1_C23 [label="Paziente 2"]
+			P_175_R1_C23 [label="Paziente 175"]
+		}
+		subgraph cluster_R1_C107 {
+			color=lightgrey label="Cluster 107" style=filled
+			P_3_R1_C107 [label="Paziente 3"]
+		}
+		subgraph cluster_R1_C105 {
+			color=lightgrey label="Cluster 105" style=filled
+			P_4_R1_C105 [label="Paziente 4"]
+		}
+		subgraph cluster_R1_C135 {
+			color=lightgrey label="Cluster 135" style=filled
+			P_5_R1_C135 [label="Paziente 5"]
+		}
+		subgraph cluster_R1_C15 {
+			color=lightgrey label="Cluster 15" style=filled
+			P_6_R1_C15 [label="Paziente 6"]
+			P_23_R1_C15 [label="Paziente 23"]
+			P_29_R1_C15 [label="Paziente 29"]
+			P_30_R1_C15 [label="Paziente 30"]
+			P_51_R1_C15 [label="Paziente 51"]
+			P_65_R1_C15 [label="Paziente 65"]
+			P_165_R1_C15 [label="Paziente 165"]
+			P_181_R1_C15 [label="Paziente 181"]
+			P_193_R1_C15 [label="Paziente 193"]
+		}
+		subgraph cluster_R1_C22 {
+			color=lightgrey label="Cluster 22" style=filled
+			P_7_R1_C22 [label="Paziente 7"]
+			P_13_R1_C22 [label="Paziente 13"]
+			P_131_R1_C22 [label="Paziente 131"]
+			P_173_R1_C22 [label="Paziente 173"]
+			P_198_R1_C22 [label="Paziente 198"]
+			P_239_R1_C22 [label="Paziente 239"]
+			P_282_R1_C22 [label="Paziente 282"]
+			P_289_R1_C22 [label="Paziente 289"]
+		}
+		subgraph cluster_R1_C103 {
+			color=lightgrey label="Cluster 103" style=filled
+			P_8_R1_C103 [label="Paziente 8"]
+		}
+		subgraph cluster_R1_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_9_R1_C1 [label="Paziente 9"]
+			P_15_R1_C1 [label="Paziente 15"]
+			P_102_R1_C1 [label="Paziente 102"]
+			P_104_R1_C1 [label="Paziente 104"]
+			P_127_R1_C1 [label="Paziente 127"]
+			P_146_R1_C1 [label="Paziente 146"]
+			P_150_R1_C1 [label="Paziente 150"]
+		}
+		subgraph cluster_R1_C60 {
+			color=lightgrey label="Cluster 60" style=filled
+			P_10_R1_C60 [label="Paziente 10"]
+			P_109_R1_C60 [label="Paziente 109"]
+			P_115_R1_C60 [label="Paziente 115"]
+			P_196_R1_C60 [label="Paziente 196"]
+			P_200_R1_C60 [label="Paziente 200"]
+			P_212_R1_C60 [label="Paziente 212"]
+		}
+		subgraph cluster_R1_C115 {
+			color=lightgrey label="Cluster 115" style=filled
+			P_11_R1_C115 [label="Paziente 11"]
+		}
+		subgraph cluster_R1_C91 {
+			color=lightgrey label="Cluster 91" style=filled
+			P_12_R1_C91 [label="Paziente 12"]
+		}
+		subgraph cluster_R1_C19 {
+			color=lightgrey label="Cluster 19" style=filled
+			P_14_R1_C19 [label="Paziente 14"]
+			P_128_R1_C19 [label="Paziente 128"]
+		}
+		subgraph cluster_R1_C7 {
+			color=lightgrey label="Cluster 7" style=filled
+			P_16_R1_C7 [label="Paziente 16"]
+			P_17_R1_C7 [label="Paziente 17"]
+			P_26_R1_C7 [label="Paziente 26"]
+			P_27_R1_C7 [label="Paziente 27"]
+			P_37_R1_C7 [label="Paziente 37"]
+			P_46_R1_C7 [label="Paziente 46"]
+			P_55_R1_C7 [label="Paziente 55"]
+			P_95_R1_C7 [label="Paziente 95"]
+			P_96_R1_C7 [label="Paziente 96"]
+			P_118_R1_C7 [label="Paziente 118"]
+			P_163_R1_C7 [label="Paziente 163"]
+			P_203_R1_C7 [label="Paziente 203"]
+			P_236_R1_C7 [label="Paziente 236"]
+			P_240_R1_C7 [label="Paziente 240"]
+		}
+		subgraph cluster_R1_C17 {
+			color=lightgrey label="Cluster 17" style=filled
+			P_18_R1_C17 [label="Paziente 18"]
+			P_20_R1_C17 [label="Paziente 20"]
+			P_21_R1_C17 [label="Paziente 21"]
+			P_22_R1_C17 [label="Paziente 22"]
+			P_24_R1_C17 [label="Paziente 24"]
+			P_28_R1_C17 [label="Paziente 28"]
+			P_31_R1_C17 [label="Paziente 31"]
+			P_35_R1_C17 [label="Paziente 35"]
+			P_36_R1_C17 [label="Paziente 36"]
+			P_39_R1_C17 [label="Paziente 39"]
+			P_42_R1_C17 [label="Paziente 42"]
+			P_43_R1_C17 [label="Paziente 43"]
+			P_57_R1_C17 [label="Paziente 57"]
+			P_62_R1_C17 [label="Paziente 62"]
+			P_76_R1_C17 [label="Paziente 76"]
+			P_88_R1_C17 [label="Paziente 88"]
+			P_91_R1_C17 [label="Paziente 91"]
+			P_97_R1_C17 [label="Paziente 97"]
+			P_103_R1_C17 [label="Paziente 103"]
+			P_108_R1_C17 [label="Paziente 108"]
+			P_126_R1_C17 [label="Paziente 126"]
+			P_147_R1_C17 [label="Paziente 147"]
+			P_155_R1_C17 [label="Paziente 155"]
+			P_167_R1_C17 [label="Paziente 167"]
+			P_169_R1_C17 [label="Paziente 169"]
+			P_174_R1_C17 [label="Paziente 174"]
+			P_176_R1_C17 [label="Paziente 176"]
+			P_205_R1_C17 [label="Paziente 205"]
+			P_213_R1_C17 [label="Paziente 213"]
+			P_222_R1_C17 [label="Paziente 222"]
+			P_230_R1_C17 [label="Paziente 230"]
+			P_233_R1_C17 [label="Paziente 233"]
+			P_246_R1_C17 [label="Paziente 246"]
+			P_248_R1_C17 [label="Paziente 248"]
+			P_264_R1_C17 [label="Paziente 264"]
+			P_274_R1_C17 [label="Paziente 274"]
+			P_280_R1_C17 [label="Paziente 280"]
+			P_281_R1_C17 [label="Paziente 281"]
+			P_286_R1_C17 [label="Paziente 286"]
+			P_287_R1_C17 [label="Paziente 287"]
+		}
+		subgraph cluster_R1_C4 {
+			color=lightgrey label="Cluster 4" style=filled
+			P_19_R1_C4 [label="Paziente 19"]
+			P_33_R1_C4 [label="Paziente 33"]
+			P_34_R1_C4 [label="Paziente 34"]
+			P_220_R1_C4 [label="Paziente 220"]
+		}
+		subgraph cluster_R1_C31 {
+			color=lightgrey label="Cluster 31" style=filled
+			P_32_R1_C31 [label="Paziente 32"]
+			P_38_R1_C31 [label="Paziente 38"]
+			P_40_R1_C31 [label="Paziente 40"]
+			P_41_R1_C31 [label="Paziente 41"]
+			P_172_R1_C31 [label="Paziente 172"]
+		}
+		subgraph cluster_R1_C77 {
+			color=lightgrey label="Cluster 77" style=filled
+			P_44_R1_C77 [label="Paziente 44"]
+		}
+		subgraph cluster_R1_C119 {
+			color=lightgrey label="Cluster 119" style=filled
+			P_47_R1_C119 [label="Paziente 47"]
+		}
+		subgraph cluster_R1_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			P_48_R1_C5 [label="Paziente 48"]
+			P_293_R1_C5 [label="Paziente 293"]
+		}
+		subgraph cluster_R1_C8 {
+			color=lightgrey label="Cluster 8" style=filled
+			P_49_R1_C8 [label="Paziente 49"]
+			P_258_R1_C8 [label="Paziente 258"]
+		}
+		subgraph cluster_R1_C123 {
+			color=lightgrey label="Cluster 123" style=filled
+			P_50_R1_C123 [label="Paziente 50"]
+		}
+		subgraph cluster_R1_C33 {
+			color=lightgrey label="Cluster 33" style=filled
+			P_52_R1_C33 [label="Paziente 52"]
+			P_72_R1_C33 [label="Paziente 72"]
+			P_80_R1_C33 [label="Paziente 80"]
+			P_83_R1_C33 [label="Paziente 83"]
+			P_94_R1_C33 [label="Paziente 94"]
+			P_105_R1_C33 [label="Paziente 105"]
+			P_145_R1_C33 [label="Paziente 145"]
+			P_178_R1_C33 [label="Paziente 178"]
+			P_192_R1_C33 [label="Paziente 192"]
+			P_199_R1_C33 [label="Paziente 199"]
+			P_208_R1_C33 [label="Paziente 208"]
+			P_224_R1_C33 [label="Paziente 224"]
+			P_249_R1_C33 [label="Paziente 249"]
+			P_288_R1_C33 [label="Paziente 288"]
+			P_292_R1_C33 [label="Paziente 292"]
+		}
+		subgraph cluster_R1_C64 {
+			color=lightgrey label="Cluster 64" style=filled
+			P_53_R1_C64 [label="Paziente 53"]
+			P_211_R1_C64 [label="Paziente 211"]
+		}
+		subgraph cluster_R1_C114 {
+			color=lightgrey label="Cluster 114" style=filled
+			P_54_R1_C114 [label="Paziente 54"]
+		}
+		subgraph cluster_R1_C78 {
+			color=lightgrey label="Cluster 78" style=filled
+			P_56_R1_C78 [label="Paziente 56"]
+		}
+		subgraph cluster_R1_C132 {
+			color=lightgrey label="Cluster 132" style=filled
+			P_58_R1_C132 [label="Paziente 58"]
+		}
+		subgraph cluster_R1_C122 {
+			color=lightgrey label="Cluster 122" style=filled
+			P_59_R1_C122 [label="Paziente 59"]
+		}
+		subgraph cluster_R1_C68 {
+			color=lightgrey label="Cluster 68" style=filled
+			P_60_R1_C68 [label="Paziente 60"]
+			P_64_R1_C68 [label="Paziente 64"]
+			P_138_R1_C68 [label="Paziente 138"]
+			P_158_R1_C68 [label="Paziente 158"]
+			P_184_R1_C68 [label="Paziente 184"]
+			P_216_R1_C68 [label="Paziente 216"]
+			P_253_R1_C68 [label="Paziente 253"]
+		}
+		subgraph cluster_R1_C70 {
+			color=lightgrey label="Cluster 70" style=filled
+			P_61_R1_C70 [label="Paziente 61"]
+		}
+		subgraph cluster_R1_C106 {
+			color=lightgrey label="Cluster 106" style=filled
+			P_63_R1_C106 [label="Paziente 63"]
+		}
+		subgraph cluster_R1_C34 {
+			color=lightgrey label="Cluster 34" style=filled
+			P_66_R1_C34 [label="Paziente 66"]
+			P_74_R1_C34 [label="Paziente 74"]
+		}
+		subgraph cluster_R1_C9 {
+			color=lightgrey label="Cluster 9" style=filled
+			P_67_R1_C9 [label="Paziente 67"]
+			P_162_R1_C9 [label="Paziente 162"]
+			P_189_R1_C9 [label="Paziente 189"]
+			P_254_R1_C9 [label="Paziente 254"]
+			P_255_R1_C9 [label="Paziente 255"]
+		}
+		subgraph cluster_R1_C13 {
+			color=lightgrey label="Cluster 13" style=filled
+			P_68_R1_C13 [label="Paziente 68"]
+			P_160_R1_C13 [label="Paziente 160"]
+			P_250_R1_C13 [label="Paziente 250"]
+			P_299_R1_C13 [label="Paziente 299"]
+		}
+		subgraph cluster_R1_C11 {
+			color=lightgrey label="Cluster 11" style=filled
+			P_69_R1_C11 [label="Paziente 69"]
+			P_290_R1_C11 [label="Paziente 290"]
+		}
+		subgraph cluster_R1_C112 {
+			color=lightgrey label="Cluster 112" style=filled
+			P_70_R1_C112 [label="Paziente 70"]
+		}
+		subgraph cluster_R1_C117 {
+			color=lightgrey label="Cluster 117" style=filled
+			P_71_R1_C117 [label="Paziente 71"]
+		}
+		subgraph cluster_R1_C127 {
+			color=lightgrey label="Cluster 127" style=filled
+			P_73_R1_C127 [label="Paziente 73"]
+		}
+		subgraph cluster_R1_C124 {
+			color=lightgrey label="Cluster 124" style=filled
+			P_75_R1_C124 [label="Paziente 75"]
+		}
+		subgraph cluster_R1_C87 {
+			color=lightgrey label="Cluster 87" style=filled
+			P_77_R1_C87 [label="Paziente 77"]
+		}
+		subgraph cluster_R1_C88 {
+			color=lightgrey label="Cluster 88" style=filled
+			P_79_R1_C88 [label="Paziente 79"]
+		}
+		subgraph cluster_R1_C90 {
+			color=lightgrey label="Cluster 90" style=filled
+			P_81_R1_C90 [label="Paziente 81"]
+		}
+		subgraph cluster_R1_C43 {
+			color=lightgrey label="Cluster 43" style=filled
+			P_84_R1_C43 [label="Paziente 84"]
+		}
+		subgraph cluster_R1_C83 {
+			color=lightgrey label="Cluster 83" style=filled
+			P_85_R1_C83 [label="Paziente 85"]
+		}
+		subgraph cluster_R1_C125 {
+			color=lightgrey label="Cluster 125" style=filled
+			P_87_R1_C125 [label="Paziente 87"]
+		}
+		subgraph cluster_R1_C121 {
+			color=lightgrey label="Cluster 121" style=filled
+			P_89_R1_C121 [label="Paziente 89"]
+		}
+		subgraph cluster_R1_C116 {
+			color=lightgrey label="Cluster 116" style=filled
+			P_90_R1_C116 [label="Paziente 90"]
+		}
+		subgraph cluster_R1_C120 {
+			color=lightgrey label="Cluster 120" style=filled
+			P_92_R1_C120 [label="Paziente 92"]
+		}
+		subgraph cluster_R1_C74 {
+			color=lightgrey label="Cluster 74" style=filled
+			P_93_R1_C74 [label="Paziente 93"]
+		}
+		subgraph cluster_R1_C59 {
+			color=lightgrey label="Cluster 59" style=filled
+			P_98_R1_C59 [label="Paziente 98"]
+		}
+		subgraph cluster_R1_C6 {
+			color=lightgrey label="Cluster 6" style=filled
+			P_99_R1_C6 [label="Paziente 99"]
+			P_121_R1_C6 [label="Paziente 121"]
+		}
+		subgraph cluster_R1_C38 {
+			color=lightgrey label="Cluster 38" style=filled
+			P_100_R1_C38 [label="Paziente 100"]
+		}
+		subgraph cluster_R1_C94 {
+			color=lightgrey label="Cluster 94" style=filled
+			P_101_R1_C94 [label="Paziente 101"]
+		}
+		subgraph cluster_R1_C92 {
+			color=lightgrey label="Cluster 92" style=filled
+			P_107_R1_C92 [label="Paziente 107"]
+		}
+		subgraph cluster_R1_C101 {
+			color=lightgrey label="Cluster 101" style=filled
+			P_111_R1_C101 [label="Paziente 111"]
+		}
+		subgraph cluster_R1_C130 {
+			color=lightgrey label="Cluster 130" style=filled
+			P_112_R1_C130 [label="Paziente 112"]
+		}
+		subgraph cluster_R1_C133 {
+			color=lightgrey label="Cluster 133" style=filled
+			P_113_R1_C133 [label="Paziente 113"]
+		}
+		subgraph cluster_R1_C111 {
+			color=lightgrey label="Cluster 111" style=filled
+			P_114_R1_C111 [label="Paziente 114"]
+		}
+		subgraph cluster_R1_C29 {
+			color=lightgrey label="Cluster 29" style=filled
+			P_116_R1_C29 [label="Paziente 116"]
+			P_296_R1_C29 [label="Paziente 296"]
+			P_298_R1_C29 [label="Paziente 298"]
+		}
+		subgraph cluster_R1_C108 {
+			color=lightgrey label="Cluster 108" style=filled
+			P_117_R1_C108 [label="Paziente 117"]
+		}
+		subgraph cluster_R1_C126 {
+			color=lightgrey label="Cluster 126" style=filled
+			P_119_R1_C126 [label="Paziente 119"]
+		}
+		subgraph cluster_R1_C85 {
+			color=lightgrey label="Cluster 85" style=filled
+			P_120_R1_C85 [label="Paziente 120"]
+		}
+		subgraph cluster_R1_C79 {
+			color=lightgrey label="Cluster 79" style=filled
+			P_123_R1_C79 [label="Paziente 123"]
+		}
+		subgraph cluster_R1_C12 {
+			color=lightgrey label="Cluster 12" style=filled
+			P_124_R1_C12 [label="Paziente 124"]
+			P_134_R1_C12 [label="Paziente 134"]
+		}
+		subgraph cluster_R1_C55 {
+			color=lightgrey label="Cluster 55" style=filled
+			P_125_R1_C55 [label="Paziente 125"]
+		}
+		subgraph cluster_R1_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			P_129_R1_C3 [label="Paziente 129"]
+			P_159_R1_C3 [label="Paziente 159"]
+		}
+		subgraph cluster_R1_C113 {
+			color=lightgrey label="Cluster 113" style=filled
+			P_130_R1_C113 [label="Paziente 130"]
+		}
+		subgraph cluster_R1_C56 {
+			color=lightgrey label="Cluster 56" style=filled
+			P_132_R1_C56 [label="Paziente 132"]
+		}
+		subgraph cluster_R1_C95 {
+			color=lightgrey label="Cluster 95" style=filled
+			P_136_R1_C95 [label="Paziente 136"]
+		}
+		subgraph cluster_R1_C99 {
+			color=lightgrey label="Cluster 99" style=filled
+			P_137_R1_C99 [label="Paziente 137"]
+		}
+		subgraph cluster_R1_C45 {
+			color=lightgrey label="Cluster 45" style=filled
+			P_139_R1_C45 [label="Paziente 139"]
+		}
+		subgraph cluster_R1_C75 {
+			color=lightgrey label="Cluster 75" style=filled
+			P_140_R1_C75 [label="Paziente 140"]
+		}
+		subgraph cluster_R1_C42 {
+			color=lightgrey label="Cluster 42" style=filled
+			P_141_R1_C42 [label="Paziente 141"]
+			P_273_R1_C42 [label="Paziente 273"]
+		}
+		subgraph cluster_R1_C76 {
+			color=lightgrey label="Cluster 76" style=filled
+			P_142_R1_C76 [label="Paziente 142"]
+		}
+		subgraph cluster_R1_C53 {
+			color=lightgrey label="Cluster 53" style=filled
+			P_144_R1_C53 [label="Paziente 144"]
+		}
+		subgraph cluster_R1_C110 {
+			color=lightgrey label="Cluster 110" style=filled
+			P_148_R1_C110 [label="Paziente 148"]
+		}
+		subgraph cluster_R1_C131 {
+			color=lightgrey label="Cluster 131" style=filled
+			P_149_R1_C131 [label="Paziente 149"]
+		}
+		subgraph cluster_R1_C72 {
+			color=lightgrey label="Cluster 72" style=filled
+			P_151_R1_C72 [label="Paziente 151"]
+		}
+		subgraph cluster_R1_C102 {
+			color=lightgrey label="Cluster 102" style=filled
+			P_152_R1_C102 [label="Paziente 152"]
+		}
+		subgraph cluster_R1_C96 {
+			color=lightgrey label="Cluster 96" style=filled
+			P_153_R1_C96 [label="Paziente 153"]
+		}
+		subgraph cluster_R1_C61 {
+			color=lightgrey label="Cluster 61" style=filled
+			P_154_R1_C61 [label="Paziente 154"]
+		}
+		subgraph cluster_R1_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			P_156_R1_C0 [label="Paziente 156"]
+			P_302_R1_C0 [label="Paziente 302"]
+		}
+		subgraph cluster_R1_C50 {
+			color=lightgrey label="Cluster 50" style=filled
+			P_157_R1_C50 [label="Paziente 157"]
+		}
+		subgraph cluster_R1_C80 {
+			color=lightgrey label="Cluster 80" style=filled
+			P_161_R1_C80 [label="Paziente 161"]
+		}
+		subgraph cluster_R1_C71 {
+			color=lightgrey label="Cluster 71" style=filled
+			P_164_R1_C71 [label="Paziente 164"]
+		}
+		subgraph cluster_R1_C118 {
+			color=lightgrey label="Cluster 118" style=filled
+			P_166_R1_C118 [label="Paziente 166"]
+		}
+		subgraph cluster_R1_C52 {
+			color=lightgrey label="Cluster 52" style=filled
+			P_168_R1_C52 [label="Paziente 168"]
+		}
+		subgraph cluster_R1_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			P_170_R1_C2 [label="Paziente 170"]
+			P_243_R1_C2 [label="Paziente 243"]
+		}
+		subgraph cluster_R1_C109 {
+			color=lightgrey label="Cluster 109" style=filled
+			P_171_R1_C109 [label="Paziente 171"]
+		}
+		subgraph cluster_R1_C63 {
+			color=lightgrey label="Cluster 63" style=filled
+			P_177_R1_C63 [label="Paziente 177"]
+			P_210_R1_C63 [label="Paziente 210"]
+		}
+		subgraph cluster_R1_C39 {
+			color=lightgrey label="Cluster 39" style=filled
+			P_179_R1_C39 [label="Paziente 179"]
+		}
+		subgraph cluster_R1_C134 {
+			color=lightgrey label="Cluster 134" style=filled
+			P_183_R1_C134 [label="Paziente 183"]
+		}
+		subgraph cluster_R1_C129 {
+			color=lightgrey label="Cluster 129" style=filled
+			P_186_R1_C129 [label="Paziente 186"]
+		}
+		subgraph cluster_R1_C35 {
+			color=lightgrey label="Cluster 35" style=filled
+			P_187_R1_C35 [label="Paziente 187"]
+		}
+		subgraph cluster_R1_C97 {
+			color=lightgrey label="Cluster 97" style=filled
+			P_188_R1_C97 [label="Paziente 188"]
+		}
+		subgraph cluster_R1_C58 {
+			color=lightgrey label="Cluster 58" style=filled
+			P_191_R1_C58 [label="Paziente 191"]
+		}
+		subgraph cluster_R1_C137 {
+			color=lightgrey label="Cluster 137" style=filled
+			P_194_R1_C137 [label="Paziente 194"]
+		}
+		subgraph cluster_R1_C84 {
+			color=lightgrey label="Cluster 84" style=filled
+			P_195_R1_C84 [label="Paziente 195"]
+		}
+		subgraph cluster_R1_C81 {
+			color=lightgrey label="Cluster 81" style=filled
+			P_197_R1_C81 [label="Paziente 197"]
+		}
+		subgraph cluster_R1_C37 {
+			color=lightgrey label="Cluster 37" style=filled
+			P_202_R1_C37 [label="Paziente 202"]
+		}
+		subgraph cluster_R1_C82 {
+			color=lightgrey label="Cluster 82" style=filled
+			P_204_R1_C82 [label="Paziente 204"]
+		}
+		subgraph cluster_R1_C65 {
+			color=lightgrey label="Cluster 65" style=filled
+			P_206_R1_C65 [label="Paziente 206"]
+		}
+		subgraph cluster_R1_C86 {
+			color=lightgrey label="Cluster 86" style=filled
+			P_209_R1_C86 [label="Paziente 209"]
+		}
+		subgraph cluster_R1_C14 {
+			color=lightgrey label="Cluster 14" style=filled
+			P_215_R1_C14 [label="Paziente 215"]
+			P_217_R1_C14 [label="Paziente 217"]
+			P_279_R1_C14 [label="Paziente 279"]
+		}
+		subgraph cluster_R1_C98 {
+			color=lightgrey label="Cluster 98" style=filled
+			P_218_R1_C98 [label="Paziente 218"]
+		}
+		subgraph cluster_R1_C21 {
+			color=lightgrey label="Cluster 21" style=filled
+			P_219_R1_C21 [label="Paziente 219"]
+			P_261_R1_C21 [label="Paziente 261"]
+		}
+		subgraph cluster_R1_C100 {
+			color=lightgrey label="Cluster 100" style=filled
+			P_221_R1_C100 [label="Paziente 221"]
+		}
+		subgraph cluster_R1_C54 {
+			color=lightgrey label="Cluster 54" style=filled
+			P_223_R1_C54 [label="Paziente 223"]
+		}
+		subgraph cluster_R1_C46 {
+			color=lightgrey label="Cluster 46" style=filled
+			P_225_R1_C46 [label="Paziente 225"]
+			P_265_R1_C46 [label="Paziente 265"]
+		}
+		subgraph cluster_R1_C27 {
+			color=lightgrey label="Cluster 27" style=filled
+			P_227_R1_C27 [label="Paziente 227"]
+		}
+		subgraph cluster_R1_C57 {
+			color=lightgrey label="Cluster 57" style=filled
+			P_228_R1_C57 [label="Paziente 228"]
+		}
+		subgraph cluster_R1_C20 {
+			color=lightgrey label="Cluster 20" style=filled
+			P_234_R1_C20 [label="Paziente 234"]
+			P_244_R1_C20 [label="Paziente 244"]
+		}
+		subgraph cluster_R1_C69 {
+			color=lightgrey label="Cluster 69" style=filled
+			P_235_R1_C69 [label="Paziente 235"]
+		}
+		subgraph cluster_R1_C104 {
+			color=lightgrey label="Cluster 104" style=filled
+			P_238_R1_C104 [label="Paziente 238"]
+		}
+		subgraph cluster_R1_C18 {
+			color=lightgrey label="Cluster 18" style=filled
+			P_245_R1_C18 [label="Paziente 245"]
+		}
+		subgraph cluster_R1_C136 {
+			color=lightgrey label="Cluster 136" style=filled
+			P_251_R1_C136 [label="Paziente 251"]
+		}
+		subgraph cluster_R1_C67 {
+			color=lightgrey label="Cluster 67" style=filled
+			P_256_R1_C67 [label="Paziente 256"]
+		}
+		subgraph cluster_R1_C26 {
+			color=lightgrey label="Cluster 26" style=filled
+			P_262_R1_C26 [label="Paziente 262"]
+		}
+		subgraph cluster_R1_C49 {
+			color=lightgrey label="Cluster 49" style=filled
+			P_263_R1_C49 [label="Paziente 263"]
+		}
+		subgraph cluster_R1_C10 {
+			color=lightgrey label="Cluster 10" style=filled
+			P_266_R1_C10 [label="Paziente 266"]
+			P_269_R1_C10 [label="Paziente 269"]
+		}
+		subgraph cluster_R1_C128 {
+			color=lightgrey label="Cluster 128" style=filled
+			P_267_R1_C128 [label="Paziente 267"]
+		}
+		subgraph cluster_R1_C89 {
+			color=lightgrey label="Cluster 89" style=filled
+			P_268_R1_C89 [label="Paziente 268"]
+		}
+		subgraph cluster_R1_C66 {
+			color=lightgrey label="Cluster 66" style=filled
+			P_270_R1_C66 [label="Paziente 270"]
+		}
+		subgraph cluster_R1_C73 {
+			color=lightgrey label="Cluster 73" style=filled
+			P_271_R1_C73 [label="Paziente 271"]
+		}
+		subgraph cluster_R1_C41 {
+			color=lightgrey label="Cluster 41" style=filled
+			P_272_R1_C41 [label="Paziente 272"]
+		}
+		subgraph cluster_R1_C40 {
+			color=lightgrey label="Cluster 40" style=filled
+			P_275_R1_C40 [label="Paziente 275"]
+		}
+		subgraph cluster_R1_C16 {
+			color=lightgrey label="Cluster 16" style=filled
+			P_276_R1_C16 [label="Paziente 276"]
+			P_300_R1_C16 [label="Paziente 300"]
+		}
+		subgraph cluster_R1_C44 {
+			color=lightgrey label="Cluster 44" style=filled
+			P_277_R1_C44 [label="Paziente 277"]
+		}
+		subgraph cluster_R1_C32 {
+			color=lightgrey label="Cluster 32" style=filled
+			P_278_R1_C32 [label="Paziente 278"]
+		}
+		subgraph cluster_R1_C47 {
+			color=lightgrey label="Cluster 47" style=filled
+			P_283_R1_C47 [label="Paziente 283"]
+		}
+		subgraph cluster_R1_C48 {
+			color=lightgrey label="Cluster 48" style=filled
+			P_285_R1_C48 [label="Paziente 285"]
+		}
+		subgraph cluster_R1_C62 {
+			color=lightgrey label="Cluster 62" style=filled
+			P_291_R1_C62 [label="Paziente 291"]
+		}
+		subgraph cluster_R1_C36 {
+			color=lightgrey label="Cluster 36" style=filled
+			P_294_R1_C36 [label="Paziente 294"]
+		}
+		subgraph cluster_R1_C30 {
+			color=lightgrey label="Cluster 30" style=filled
+			P_295_R1_C30 [label="Paziente 295"]
+		}
+		subgraph cluster_R1_C93 {
+			color=lightgrey label="Cluster 93" style=filled
+			P_297_R1_C93 [label="Paziente 297"]
+		}
+		subgraph cluster_R1_C24 {
+			color=lightgrey label="Cluster 24" style=filled
+			P_301_R1_C24 [label="Paziente 301"]
+		}
+		subgraph cluster_R1_C51 {
+			color=lightgrey label="Cluster 51" style=filled
+			P_304_R1_C51 [label="Paziente 304"]
+		}
+		subgraph cluster_R1_C28 {
+			color=lightgrey label="Cluster 28" style=filled
+			P_305_R1_C28 [label="Paziente 305"]
+		}
+	}
+	subgraph cluster_rank_3 {
+		rank=same
+		color=grey fontsize=20 label="Rank 3" labeljust=c style=dashed
+		subgraph cluster_R3_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_25_R3_C1 [label="Paziente 25"]
+			P_145_R3_C1 [label="Paziente 145"]
+			P_180_R3_C1 [label="Paziente 180"]
+			P_226_R3_C1 [label="Paziente 226"]
+		}
+		subgraph cluster_R3_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			P_86_R3_C0 [label="Paziente 86"]
+			P_121_R3_C0 [label="Paziente 121"]
+			P_135_R3_C0 [label="Paziente 135"]
+			P_196_R3_C0 [label="Paziente 196"]
+			P_222_R3_C0 [label="Paziente 222"]
+		}
+	}
+	subgraph cluster_rank_4 {
+		rank=same
+		color=grey fontsize=20 label="Rank 4" labeljust=c style=dashed
+		subgraph cluster_R4_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_45_R4_C1 [label="Paziente 45"]
+			P_231_R4_C1 [label="Paziente 231"]
+		}
+		subgraph cluster_R4_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			P_207_R4_C0 [label="Paziente 207"]
+			P_291_R4_C0 [label="Paziente 291"]
+		}
+	}
+	subgraph cluster_rank_2 {
+		rank=same
+		color=grey fontsize=20 label="Rank 2" labeljust=c style=dashed
+		subgraph cluster_R2_C15 {
+			color=lightgrey label="Cluster 15" style=filled
+			P_78_R2_C15 [label="Paziente 78"]
+		}
+		subgraph cluster_R2_C9 {
+			color=lightgrey label="Cluster 9" style=filled
+			P_82_R2_C9 [label="Paziente 82"]
+			P_86_R2_C9 [label="Paziente 86"]
+			P_211_R2_C9 [label="Paziente 211"]
+		}
+		subgraph cluster_R2_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_85_R2_C1 [label="Paziente 85"]
+			P_106_R2_C1 [label="Paziente 106"]
+			P_190_R2_C1 [label="Paziente 190"]
+			P_207_R2_C1 [label="Paziente 207"]
+			P_214_R2_C1 [label="Paziente 214"]
+			P_226_R2_C1 [label="Paziente 226"]
+			P_260_R2_C1 [label="Paziente 260"]
+		}
+		subgraph cluster_R2_C19 {
+			color=lightgrey label="Cluster 19" style=filled
+			P_101_R2_C19 [label="Paziente 101"]
+		}
+		subgraph cluster_R2_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			P_103_R2_C3 [label="Paziente 103"]
+			P_203_R2_C3 [label="Paziente 203"]
+		}
+		subgraph cluster_R2_C4 {
+			color=lightgrey label="Cluster 4" style=filled
+			P_110_R2_C4 [label="Paziente 110"]
+			P_185_R2_C4 [label="Paziente 185"]
+		}
+		subgraph cluster_R2_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			P_122_R2_C0 [label="Paziente 122"]
+			P_163_R2_C0 [label="Paziente 163"]
+			P_229_R2_C0 [label="Paziente 229"]
+			P_237_R2_C0 [label="Paziente 237"]
+			P_252_R2_C0 [label="Paziente 252"]
+		}
+		subgraph cluster_R2_C14 {
+			color=lightgrey label="Cluster 14" style=filled
+			P_142_R2_C14 [label="Paziente 142"]
+		}
+		subgraph cluster_R2_C13 {
+			color=lightgrey label="Cluster 13" style=filled
+			P_143_R2_C13 [label="Paziente 143"]
+		}
+		subgraph cluster_R2_C12 {
+			color=lightgrey label="Cluster 12" style=filled
+			P_151_R2_C12 [label="Paziente 151"]
+		}
+		subgraph cluster_R2_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			P_160_R2_C2 [label="Paziente 160"]
+			P_232_R2_C2 [label="Paziente 232"]
+		}
+		subgraph cluster_R2_C11 {
+			color=lightgrey label="Cluster 11" style=filled
+			P_182_R2_C11 [label="Paziente 182"]
+		}
+		subgraph cluster_R2_C21 {
+			color=lightgrey label="Cluster 21" style=filled
+			P_201_R2_C21 [label="Paziente 201"]
+		}
+		subgraph cluster_R2_C17 {
+			color=lightgrey label="Cluster 17" style=filled
+			P_222_R2_C17 [label="Paziente 222"]
+		}
+		subgraph cluster_R2_C16 {
+			color=lightgrey label="Cluster 16" style=filled
+			P_241_R2_C16 [label="Paziente 241"]
+		}
+		subgraph cluster_R2_C7 {
+			color=lightgrey label="Cluster 7" style=filled
+			P_242_R2_C7 [label="Paziente 242"]
+		}
+		subgraph cluster_R2_C6 {
+			color=lightgrey label="Cluster 6" style=filled
+			P_246_R2_C6 [label="Paziente 246"]
+		}
+		subgraph cluster_R2_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			P_250_R2_C5 [label="Paziente 250"]
+		}
+		subgraph cluster_R2_C20 {
+			color=lightgrey label="Cluster 20" style=filled
+			P_257_R2_C20 [label="Paziente 257"]
+		}
+		subgraph cluster_R2_C18 {
+			color=lightgrey label="Cluster 18" style=filled
+			P_259_R2_C18 [label="Paziente 259"]
+		}
+		subgraph cluster_R2_C10 {
+			color=lightgrey label="Cluster 10" style=filled
+			P_284_R2_C10 [label="Paziente 284"]
+		}
+		subgraph cluster_R2_C8 {
+			color=lightgrey label="Cluster 8" style=filled
+			P_303_R2_C8 [label="Paziente 303"]
+		}
+	}
+	subgraph cluster_rank_5 {
+		rank=same
+		color=grey fontsize=20 label="Rank 5" labeljust=c style=dashed
+		subgraph cluster_R5_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_133_R5_C1 [label="Paziente 133"]
+		}
+	}
+	P_184_R1_C68 -> P_229_R2_C0 [color="#222222" lhead=cluster_rank_2 ltail=cluster_rank_1 penwidth=2.5 weight=100]
+	P_229_R2_C0 -> P_86_R3_C0 [color="#222222" lhead=cluster_rank_3 ltail=cluster_rank_2 penwidth=2.5 weight=100]
+	P_86_R3_C0 -> P_207_R4_C0 [color="#222222" lhead=cluster_rank_4 ltail=cluster_rank_3 penwidth=2.5 weight=100]
+	P_207_R4_C0 -> P_133_R5_C1 [color="#222222" lhead=cluster_rank_5 ltail=cluster_rank_4 penwidth=2.5 weight=100]
+}
