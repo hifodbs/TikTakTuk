@@ -6,6 +6,8 @@ from utils.weight_gene import weight_genes
 import collections
 from utils.cluster import clusterize_patients
 import utils.plot_both
+import networkx as nx
+import matplotlib.pyplot as plt
 
 #-----------------------------------
 #Caricamento e pulizia dei dati 
@@ -18,7 +20,10 @@ def load_and_filter_data(filepath, ttype_selezionato):
     result = pyreadr.read_r(filepath)
     df = result[None]
 
-    df_filtrato = df[df["ttype"] == ttype_selezionato].copy()  #selezione del tumore 
+    if ttype_selezionato != None:
+        df_filtrato = df[df["ttype"] == ttype_selezionato].copy()  #selezione del tumore 
+    else:
+        df_filtrato = df.copy()  #selezione del tumore 
     df_filtrato = df_filtrato[df_filtrato['mutatation_status'] != "WT"] #eliminazione geni sani (WT) e dati mancanti critici
     df_filtrato = df_filtrato.dropna(subset=["clock_rank", "gene"])
     df_filtrato.reset_index(drop=True, inplace=True)
@@ -28,7 +33,16 @@ def load_and_filter_data(filepath, ttype_selezionato):
     return df_filtrato
 
 
+def print_patient_ranks(df):
+    """Stampa tutti i rank associati a ciascun paziente."""
+    patient_ranks = collections.defaultdict(list)
 
+    for _, row in df.iterrows():
+        patient_ranks[row["sample_id"]].append(int(row["clock_rank"]))
+
+    for sample_id in sorted(patient_ranks):
+        unique_ranks = sorted(set(patient_ranks[sample_id]))
+        print(f"Patient {sample_id}: ranks {unique_ranks}")
 
 
 #-----------------------------------------------------
@@ -287,10 +301,28 @@ def calculate_cluster_pmi_global(input_dict, labelsels, patient_mapping):
                         
     return pmi_edges
 
+def create_gene_connections(sorted_pmi_edges, gene_clusters):
+    genes = []
+    for e in sorted_pmi_edges:
+        for start_gene in gene_clusters[e["source"][0]][e["source"][1]].keys():
+            for end_gene in gene_clusters[e["target"][0]][e["target"][1]].keys():
+                genes.append((start_gene,end_gene,e["pmi"]))
+    return  sorted(genes, key=lambda x: x[2],reverse=True)
+
+def create_tree(gene_connections):
+    graph = nx.DiGraph()
+    
+    for conn in gene_connections:
+        if graph.has_node(conn[0]) and graph.has_node(conn[1]) and nx.has_path(graph,conn[1],conn[0]):
+            continue
+        graph.add_edge(conn[0],conn[1])
+        
+    return graph
+    
 def main():
     # Parametri
     file_rds = '06_Cb_BTM_table.rds'
-    tumore = 'OV'
+    tumore = None
     
     # 1. Caricamento e Preparazione
     df = load_and_filter_data(file_rds, tumore)
@@ -315,18 +347,41 @@ def main():
     
     # --- STAMPE GRAFICHE ---
     # A. Albero semplificato (Pazienti)
-    print("Generazione albero Pazienti semplice...")
-    pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
+    #print("Generazione albero Pazienti semplice...")
+    #pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
     
     # B. Albero semplificato (Geni)
-    print("Generazione albero Geni semplice...")
-    pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
+    #print("Generazione albero Geni semplice...")
+    #pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
     
     # C. Albero evolutivo reale basato sulle frequenze (PMI)
     print("Generazione albero evolutivo PMI...")
-    pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
+    #pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
     
+    sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'])
     
+    gene_connections = create_gene_connections(sorted_pmi_edges, gene_clusters)
+    
+    gad = create_tree(gene_connections)
+    
+    print(gad)
+    print(list(nx.topological_sort(gad)))
+    
+    for layer, nodes in enumerate(nx.topological_generations(gad)):
+        # `multipartite_layout` expects the layer as a node attribute, so add the
+        # numeric layer value as a node attribute
+        for node in nodes:
+            gad.nodes[node]["layer"] = layer
+
+    # Compute the multipartite_layout using the "layer" node attribute
+    pos = nx.multipartite_layout(gad, subset_key="layer")
+
+    fig, ax = plt.subplots()
+    nx.draw_networkx(gad, pos=pos, ax=ax)
+    ax.set_title("DAG layout in topological order")
+    fig.tight_layout()
+    plt.show()
+        
     #GLOBAL
     # Sostituisci il blocco 4 del tuo vecchio main con questo:
     # print("Calcolo Mutual Information (PMI) Globale tra cluster...")
