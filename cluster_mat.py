@@ -8,6 +8,7 @@ from utils.cluster import clusterize_patients
 import utils.plot_both
 import networkx as nx
 import matplotlib.pyplot as plt
+import os
 
 #-----------------------------------
 #Caricamento e pulizia dei dati 
@@ -333,7 +334,7 @@ def create_tree(gene_connections):
 def main():
     # Parametri
     file_rds = '06_Cb_BTM_table.rds'
-    tumore = None
+    tumore = 'ESAD' #None
     
     # 1. Caricamento e Preparazione
     df = load_and_filter_data(file_rds, tumore)
@@ -356,52 +357,62 @@ def main():
     # 5. Generazione Archi Semplici (tutto Rank) per visualizzazione di controllo
     rank_edges = pt.generate_rank_edges(input_dict)
     
-    # --- STAMPE GRAFICHE ---
+#    --- STAMPE GRAFICHE ---
     # A. Albero semplificato (Pazienti)
-#     print("Generazione albero Pazienti semplice...")
-#     pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
+    print("Generazione albero Pazienti semplice...")
+    pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
     
-# #    B. Albero semplificato (Geni)
-#     print("Generazione albero Geni semplice...")
-#     pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
+#    B. Albero semplificato (Geni)
+    print("Generazione albero Geni semplice...")
+    pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
     
-#     # C. Albero evolutivo reale basato sulle frequenze (PMI)
-#     print("Generazione albero evolutivo PMI...")
-#     pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
+    # C. Albero evolutivo reale basato sulle frequenze (PMI)
+    print("Generazione albero evolutivo PMI...")
+    pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
     
-    sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'])
+    # sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'])
     
-    gene_connections = create_gene_connections(sorted_pmi_edges, gene_clusters)
+    # gene_connections = create_gene_connections(sorted_pmi_edges, gene_clusters)
     
-    gad = create_tree(gene_connections)
+    # gad = create_tree(gene_connections)
     
-    print(gad)
-    print(list(nx.topological_sort(gad)))
+    # print(gad)
+    # print(list(nx.topological_sort(gad)))
     
-    for layer, nodes in enumerate(nx.topological_generations(gad)):
-        # `multipartite_layout` expects the layer as a node attribute, so add the
-        # numeric layer value as a node attribute
-        for node in nodes:
-            gad.nodes[node]["layer"] = layer
+    # for layer, nodes in enumerate(nx.topological_generations(gad)):
+    #     # `multipartite_layout` expects the layer as a node attribute, so add the
+    #     # numeric layer value as a node attribute
+    #     for node in nodes:
+    #         gad.nodes[node]["layer"] = layer
 
-    # Compute the multipartite_layout using the "layer" node attribute
-    pos = nx.multipartite_layout(gad, subset_key="layer")
+    # # Compute the multipartite_layout using the "layer" node attribute
+    # pos = nx.multipartite_layout(gad, subset_key="layer")
 
-    fig, ax = plt.subplots()
-    nx.draw_networkx(gad, pos=pos, ax=ax)
-    ax.set_title("DAG layout in topological order")
-    fig.tight_layout()
-    plt.show()
+    # fig, ax = plt.subplots(figsize=(12, 8))
+    # nx.draw_networkx(gad, pos=pos, ax=ax, node_color='lightblue', node_size=1500, font_size=10)
+    # ax.set_title("DAG layout in topological order")
+    # fig.tight_layout()
+    
+    # # --- SALVATAGGIO NELLA CARTELLA SPECIFICA ---
+    # # 1. Definisci il nome della cartella
+    # output_dir = "produced_all_process"
+    
+    # # 2. Crea la cartella se non esiste già
+    # if not os.path.exists(output_dir):
+    #     os.makedirs(output_dir)
         
-    #GLOBAL
-    # Sostituisci il blocco 4 del tuo vecchio main con questo:
-    # print("Calcolo Mutual Information (PMI) Globale tra cluster...")
-    # pmi_edges = calculate_cluster_pmi_global(input_dict, labelsels, patient_mapping)
+    # # 3. Definisci il nome del file e unisci il percorso della cartella
+    # nome_tumore = tumore if tumore is not None else "All"
+    # file_immagine = os.path.join(output_dir, f"DAG_evoluzione_{nome_tumore}.png")
+    
+    # # 4. Salva fisicamente il file
+    # plt.savefig(file_immagine, dpi=300, bbox_inches='tight')
+    # print(f"--> Grafo salvato con successo nel percorso: {file_immagine}")
+    
+    # # 5. Mostra l'immagine a schermo (opzionale)
+    # plt.show()
+        
 
-    # # 5. Generazione Grafici
-    # print("Generazione albero evolutivo PMI...")
-    # pt.plot_genes_clusters_pmi_global(gene_clusters, pmi_edges, f"tree_genes_PMI_global_{tumore}.gv")
-    # print("Processo terminato con successo!")
 
 if __name__ == "__main__":
     main()
