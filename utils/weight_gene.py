@@ -1,49 +1,97 @@
 import numpy as np
 import pandas as pd
 
+import numpy as np
+import pandas as pd
 
-def weight_genes(df_filtrato):
-    # funzioni per la mappatura dei pesi
+def check_if_amplified_or_loh(row):
+    """
+    Classifica la singola riga coprendo i tre scenari:
+    1. LOH (restituisce True)
+    2. NaN senza LOH (restituisce False)
+    3. Dati presenti (calcola la distanza VAF, True se amplificato)
+    """
+    karyo = str(row['karyotype'])
+    try:
+        maj, min_allele = map(int, karyo.split(':'))
+    except ValueError:
+        return False
+        
+    if min_allele > maj:
+        maj, min_allele = min_allele, maj
 
-    # Mappatura tipologia mutazione per distaccare i driver principali
-    status_weights = {'CI_M': 2.0, 'M': 2.0, 'CNA_driver': 4.0}
-    df_filtrato['w_status'] = df_filtrato['mutatation_status'].map(status_weights).fillna(1.0)
+    cn = maj + min_allele
 
-    # Moltiplicatore PCAWG (2.0 se il catalogo conferma il driver, 1.0 altrimenti)
-    df_filtrato['b_pcawg'] = np.where(df_filtrato['mutation_call'].notna(), 2.0, 1.0)
+    # ==========================================
+    # CASO 1: LOH (Loss of Heterozygosity) o Amplificazione Massiccia
+    # ==========================================
+    if min_allele == 0 or cn >= 5:
+        return True 
+        
+    # ==========================================
+    # CASO 2: Valori NaN (ma senza LOH)
+    # ==========================================
+    if pd.isna(row['NV']) or pd.isna(row['DP']) or row['DP'] == 0:
+        return False
 
-    # Moltiplicatore Cariotipo (LOH o instabilità numerica)
-    def analizza_cariotipo(k_str):
-        if pd.isna(k_str): 
-            return 1.0
-        try:
-            parts = str(k_str).split(':')
-            major, minor = int(parts[0]), int(parts[1])
-            if minor == 0: 
-                return 1.5  # Incremento per Loss of Heterozygosity
-            if (major + minor) >= 5: 
-                return 1.5  # Incremento per amplificazione massiccia
-        except:
-            pass
-        return 1.0
-
-    df_filtrato['k_severity'] = df_filtrato['karyotype'].apply(analizza_cariotipo)
-
-    # Fattore WGD globale del paziente
-    df_filtrato['wgd_factor'] = np.where(df_filtrato['is_WGD'] == True, 0.8, 1.0)
-
-    # Calcolo del peso finale della singola riga (istanza mutazionale)
-    df_filtrato['gene_weight'] = (df_filtrato['w_status'] * df_filtrato['b_pcawg'] * df_filtrato['k_severity'] * df_filtrato['wgd_factor'])
+    # ==========================================
+    # CASO 3: Dati presenti, calcolo della VAF
+    # ==========================================
+    if maj == min_allele or cn == 0:
+        return False  # Cariotipo bilanciato
+        
+    vaf = row['NV'] / row['DP']
+    e_maj = maj / cn
+    e_min = min_allele / cn
     
-    df_filtrato = df_filtrato.sort_values(by=['clock_rank', 'gene', 'w_status'], ascending=[True, True, False])
+    # Test della distanza
+    dist_maj = abs(vaf - e_maj)
+    dist_min = abs(vaf - e_min)
+    
+    # True se la mutazione appartiene all'allele amplificato (Major)
+    return dist_maj < dist_min
 
-    # Aggregation
-    # Somma automaticamente le mutazioni multiple dello stesso gene nello stesso rank e tra diversi pazienti
-    node_weights = df_filtrato.groupby(['clock_rank', 'gene']).agg(
-        gene_weight=('gene_weight', 'sum'),                  # Somma i pesi per il punteggio totale
-        mut_status=('mutatation_status', 'first'),           # Conserva la tipologia più grave (grazie all'ordinamento di prima)
-        n_pazienti=('sample_id', 'nunique'),                 # Conta in quanti pazienti DIVERSI compare
-        n_occorrenze=('gene', 'count')                       # Conta il numero totale di mutazioni subite in assoluto
+
+def weight_genes(df_filtrato, top_n=20):
+    df = df_filtrato.copy()
+
+    # 1. Mappatura tipologia mutazione (WT neutro a 1.0 per chi non ha WGD)
+    status_weights = {'CI_M': 2.0, 'M': 2.0, 'CNA_driver': 4.0, 'WT': 1.0}
+    df['w_status'] = df['mutatation_status'].map(status_weights).fillna(1.0)
+
+    # 2. Moltiplicatore PCAWG
+    df['b_pcawg'] = np.where(df['mutation_call'].notna(), 2.0, 1.0)
+
+    # 3. Valutazione Cariotipo (Richiede la tua funzione check_if_amplified_or_loh)
+    df['is_severe_karyo'] = df.apply(check_if_amplified_or_loh, axis=1)
+    df['k_severity'] = np.where(df['is_severe_karyo'], 1.5, 1.0)
+
+    # 4. Fattore WGD globale
+    df['wgd_factor'] = np.where(df['is_WGD'] == True, 0.8, 1.0)
+
+    # 5. Calcolo peso della riga
+    df['row_weight'] = (df['w_status'] * df['b_pcawg'] * df['k_severity'] * df['wgd_factor'])
+    
+    # Ordiniamo per isolare la mutazione più grave
+    df = df.sort_values(by=['clock_rank', 'gene', 'row_weight'], ascending=[True, True, False])
+
+    # 6. Filtro pazienti multipli (1 paziente = 1 voto col peso peggiore)
+    df_pazienti_unici = df.groupby(['sample_id', 'clock_rank', 'gene']).first().reset_index()
+
+    # 7. Aggregazione per RANK
+    node_weights = df_pazienti_unici.groupby(['clock_rank', 'gene']).agg(
+        gene_weight=('row_weight', 'sum')
     ).reset_index()
     
-    return pd.Series(node_weights.gene_weight.values,index=node_weights.gene).to_dict()
+    # 8. ESTRAZIONE TOP 20 PER RANK
+    top_genes_df = node_weights.sort_values(
+        by=['clock_rank', 'gene_weight'], ascending=[True, False]
+    ).groupby('clock_rank').head(top_n)
+    
+    # Creiamo un dizionario che associa a ogni Rank i suoi 20 geni: {1: {'TP53', ...}, 2: {'PIK3CA', ...}}
+    valid_rank_genes = top_genes_df.groupby('clock_rank')['gene'].apply(set).to_dict()
+    
+    # Pesi globali per il clustering (facciamo la media sui Top estratti)
+    final_weights = top_genes_df.groupby('gene')['gene_weight'].mean().to_dict()
+    
+    return final_weights, valid_rank_genes

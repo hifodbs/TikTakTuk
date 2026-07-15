@@ -24,7 +24,9 @@ def load_and_filter_data(filepath, ttype_selezionato):
         df_filtrato = df[df["ttype"] == ttype_selezionato].copy()  #selezione del tumore 
     else:
         df_filtrato = df.copy()  #selezione del tumore 
-    df_filtrato = df_filtrato[df_filtrato['mutatation_status'] != "WT"] #eliminazione geni sani (WT) e dati mancanti critici
+    #esclusione wgd-wt
+    is_wgd_wt = (df_filtrato['mutatation_status'] == 'WT') & (df_filtrato['is_WGD'] == True)
+    df_filtrato = df_filtrato[~is_wgd_wt]
     df_filtrato = df_filtrato.dropna(subset=["clock_rank", "gene"])
     df_filtrato.reset_index(drop=True, inplace=True)
     
@@ -50,27 +52,36 @@ def print_patient_ranks(df):
 #e mappatura ID di ogni paziente ad un numero intero
 #----------------------------------------------------
 
-def build_boolean_matrix(df_filtrato):
-    """Calcola i pesi e costruisce il dizionario input con l'array booleano per paziente."""
+def build_boolean_matrix(df_filtrato, top_n=20):
+    """Calcola i pesi, filtra per Rank e costruisce l'array booleano omogeneo."""
+    import collections
     input_dict = collections.defaultdict(dict)
     
-    weights = weight_genes(df_filtrato)   #peso di ogni gene
-    all_genes = list(weights.keys())    #lista di tutti i geni mutati nel datasets
+    # 1. Otteniamo i pesi e la mappa dei Top 20 per Rank
+    weights, valid_rank_genes = weight_genes(df_filtrato, top_n)
+    
+    # all_genes sarà l'unione di tutti i Top 20 (serve per far funzionare Jaccard nel clustering)
+    all_genes = list(weights.keys())
     all_weights = list(weights.values())
+    
+    print(f"Costruzione Matrice: Trovati {len(all_genes)} geni unici unendo i Top {top_n} di ogni Rank.")
     
     df_subset = df_filtrato[["sample_id", "gene", "clock_rank"]]
     
-    for sample_id in df_subset["sample_id"].unique():                #per ogni gene
-        #verifica quali geni mutati sono presenti in quel paziente
+    for sample_id in df_subset["sample_id"].unique():
         df_sample = df_subset[df_subset["sample_id"] == sample_id]
-        for rank in df_sample["clock_rank"].unique():                #per ogni rank
+        
+        for rank in df_sample["clock_rank"].unique():
             df_s_rank = df_sample[df_sample["clock_rank"] == rank]
-            #per ogni rank, estrae i geni mutati di quel paziente
-            genes = df_s_rank["gene"].to_numpy()
+            patient_genes = df_s_rank["gene"].to_numpy()
             
-            # Array booleano della presenza dei geni: gene presente (T), gene assente (F)
-            result = np.isin(all_genes, genes)
-            input_dict[rank][sample_id] = result  #input_dict: dizionario booleano delle mutazioni per ogni rank del paziente
+            # FILTRO CHIAVE: Isoliamo solo i geni ammessi per QUESTO specifico Rank
+            valid_for_this_rank = valid_rank_genes.get(rank, set())
+            patient_genes_filtered = [g for g in patient_genes if g in valid_for_this_rank]
+            
+            # Array booleano
+            result = np.isin(all_genes, patient_genes_filtered)
+            input_dict[rank][sample_id] = result
             
     return input_dict, all_genes, all_weights
 
@@ -326,7 +337,7 @@ def main():
     
     # 1. Caricamento e Preparazione
     df = load_and_filter_data(file_rds, tumore)
-    input_dict, all_genes, all_weights = build_boolean_matrix(df)
+    input_dict, all_genes, all_weights = build_boolean_matrix(df, top_n=20)
     patient_mapping = get_patient_mapping(input_dict)
     
     # 2. Esecuzione Clustering
@@ -347,16 +358,16 @@ def main():
     
     # --- STAMPE GRAFICHE ---
     # A. Albero semplificato (Pazienti)
-    #print("Generazione albero Pazienti semplice...")
-    #pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
+#     print("Generazione albero Pazienti semplice...")
+#     pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
     
-    # B. Albero semplificato (Geni)
-    #print("Generazione albero Geni semplice...")
-    #pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
+# #    B. Albero semplificato (Geni)
+#     print("Generazione albero Geni semplice...")
+#     pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
     
-    # C. Albero evolutivo reale basato sulle frequenze (PMI)
-    print("Generazione albero evolutivo PMI...")
-    #pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
+#     # C. Albero evolutivo reale basato sulle frequenze (PMI)
+#     print("Generazione albero evolutivo PMI...")
+#     pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
     
     sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'])
     
