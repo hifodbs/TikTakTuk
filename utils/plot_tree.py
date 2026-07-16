@@ -260,7 +260,7 @@ def plot_genes_clusters_pmi(gene_clusters, pmi_edges, name):
         n2 = _get_first_gene_node_in_cluster(gene_clusters.get(r_t, {}).get(c_t), r_t, c_t)
         
         if n1 and n2:
-            label_text = f"{w} pts"  # \nPMI: {pmi:.1f}
+            label_text = f"{w} pts\n PMI: {pmi:.1f}"  # 
             thickness = str(1.0 + (pmi * 1.5))
             
             d.edge(n1, n2, 
