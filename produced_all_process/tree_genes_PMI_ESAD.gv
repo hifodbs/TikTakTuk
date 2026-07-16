@@ -1,0 +1,560 @@
+digraph {
+	compound=true
+	nodesep=0.3 rankdir=TB ranksep=2.5
+	node [fillcolor=lightblue fontsize=14 shape=box style=filled]
+	subgraph cluster_rank_1 {
+		rank=same
+		color=grey fontsize=20 label="Rank 1" labeljust=c style=dashed
+		anchor_R1 [height=0 shape=point style=invis width=0]
+		subgraph cluster_R1_C16 {
+			color=lightgrey label="Cluster 16" style=filled
+			GRIN2A_R1_C16 [label="GRIN2A
+(1)"]
+			PTPRD_R1_C16 [label="PTPRD
+(1)"]
+		}
+		subgraph cluster_R1_C9 {
+			color=lightgrey label="Cluster 9" style=filled
+			AKT3_R1_C9 [label="AKT3
+(3)"]
+		}
+		subgraph cluster_R1_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			AKT3_R1_C2 [label="AKT3
+(4, 28, 41, 49)"]
+			ATR_R1_C2 [label="ATR
+(4, 14, 28, 37, 41)"]
+			BCL9_R1_C2 [label="BCL9
+(4, 28, 37, 41)"]
+			CD79B_R1_C2 [label="CD79B
+(4, 14, 28, 37, 41, 49)"]
+			FGD5_R1_C2 [label="FGD5
+(4, 14, 28, 37, 41, 49)"]
+			FMN2_R1_C2 [label="FMN2
+(4, 28, 41, 49)"]
+			GNA13_R1_C2 [label="GNA13
+(4, 14, 28, 37, 41, 49)"]
+			ID3_R1_C2 [label="ID3
+(4, 28, 41, 49)"]
+			PIK3CA_R1_C2 [label="PIK3CA
+(4, 14, 28, 37, 49)"]
+			POLQ_R1_C2 [label="POLQ
+(4, 14, 28, 37, 41, 49)"]
+			PRKAR1A_R1_C2 [label="PRKAR1A
+(4, 14, 28, 37, 41, 49)"]
+			RGS7_R1_C2 [label="RGS7
+(4, 28, 41, 49)"]
+			SOX9_R1_C2 [label="SOX9
+(4, 14, 28, 37, 41, 49)"]
+			STAG1_R1_C2 [label="STAG1
+(4, 14, 28, 37, 41)"]
+			TAF15_R1_C2 [label="TAF15
+(4, 14, 37, 41)"]
+			TP53_R1_C2 [label="TP53
+(4, 14, 28, 37, 41)"]
+			WWTR1_R1_C2 [label="WWTR1
+(4, 14, 28, 37, 41, 49)"]
+			GRIN2A_R1_C2 [label="GRIN2A
+(14, 37, 41, 49)"]
+			PPM1D_R1_C2 [label="PPM1D
+(14, 28, 37, 41, 49)"]
+			PTPRD_R1_C2 [label="PTPRD
+(37, 41, 49)"]
+		}
+		subgraph cluster_R1_C8 {
+			color=lightgrey label="Cluster 8" style=filled
+			AKT3_R1_C8 [label="AKT3
+(5, 9, 23)"]
+			ATR_R1_C8 [label="ATR
+(5, 9, 23)"]
+			BCL9_R1_C8 [label="BCL9
+(5, 9, 23)"]
+			FGD5_R1_C8 [label="FGD5
+(5, 9, 23)"]
+			FMN2_R1_C8 [label="FMN2
+(5, 9, 23)"]
+			GRIN2A_R1_C8 [label="GRIN2A
+(5, 9, 23)"]
+			ID3_R1_C8 [label="ID3
+(5, 9, 23)"]
+			PIK3CA_R1_C8 [label="PIK3CA
+(5, 9, 23)"]
+			POLQ_R1_C8 [label="POLQ
+(5, 23)"]
+			PTPRD_R1_C8 [label="PTPRD
+(5, 23)"]
+			RGS7_R1_C8 [label="RGS7
+(5, 9, 23)"]
+			STAG1_R1_C8 [label="STAG1
+(5, 9, 23)"]
+			WWTR1_R1_C8 [label="WWTR1
+(5, 9, 23)"]
+			SOX9_R1_C8 [label="SOX9
+(23)"]
+		}
+		subgraph cluster_R1_C10 {
+			color=lightgrey label="Cluster 10" style=filled
+			PTPRD_R1_C10 [label="PTPRD
+(6)"]
+			TAF15_R1_C10 [label="TAF15
+(6)"]
+		}
+		subgraph cluster_R1_C11 {
+			color=lightgrey label="Cluster 11" style=filled
+			PIK3CA_R1_C11 [label="PIK3CA
+(8)"]
+		}
+		subgraph cluster_R1_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			AKT3_R1_C5 [label="AKT3
+(10, 20, 27, 31, 33)"]
+			BCL9_R1_C5 [label="BCL9
+(10, 20, 27, 31)"]
+			FMN2_R1_C5 [label="FMN2
+(10, 20, 27, 31, 33)"]
+			GRIN2A_R1_C5 [label="GRIN2A
+(10, 27)"]
+			ID3_R1_C5 [label="ID3
+(10, 20, 27, 31, 33)"]
+			RGS7_R1_C5 [label="RGS7
+(10, 20, 27, 31, 33)"]
+			TAF15_R1_C5 [label="TAF15
+(10)"]
+			PIK3CA_R1_C5 [label="PIK3CA
+(20)"]
+			PTPRD_R1_C5 [label="PTPRD
+(20)"]
+		}
+		subgraph cluster_R1_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			CD79B_R1_C3 [label="CD79B
+(12, 24, 30, 48, 51)"]
+			GNA13_R1_C3 [label="GNA13
+(12, 24, 30, 48, 51)"]
+			PPM1D_R1_C3 [label="PPM1D
+(12, 24, 30, 48, 51)"]
+			PRKAR1A_R1_C3 [label="PRKAR1A
+(12, 24, 30, 48, 51)"]
+			SOX9_R1_C3 [label="SOX9
+(12, 24, 30, 48, 51)"]
+			TAF15_R1_C3 [label="TAF15
+(12, 24, 30, 48, 51)"]
+			GRIN2A_R1_C3 [label="GRIN2A
+(24, 30)"]
+			PTPRD_R1_C3 [label="PTPRD
+(24, 30, 51)"]
+			TP53_R1_C3 [label="TP53
+(24, 51)"]
+		}
+		subgraph cluster_R1_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			ATR_R1_C0 [label="ATR
+(15, 26, 34, 35)"]
+			FGD5_R1_C0 [label="FGD5
+(15, 26, 34, 35)"]
+			POLQ_R1_C0 [label="POLQ
+(15, 26, 34, 35)"]
+			PTPRD_R1_C0 [label="PTPRD
+(15, 34, 35)"]
+			TAF15_R1_C0 [label="TAF15
+(15, 26)"]
+			WWTR1_R1_C0 [label="WWTR1
+(15, 26, 34, 35)"]
+			PIK3CA_R1_C0 [label="PIK3CA
+(26, 34, 35)"]
+			STAG1_R1_C0 [label="STAG1
+(26, 34, 35)"]
+			BCL9_R1_C0 [label="BCL9
+(35)"]
+			SOX9_R1_C0 [label="SOX9
+(35)"]
+			TP53_R1_C0 [label="TP53
+(35)"]
+		}
+		subgraph cluster_R1_C12 {
+			color=lightgrey label="Cluster 12" style=filled
+			AKT3_R1_C12 [label="AKT3
+(18, 36)"]
+			CD79B_R1_C12 [label="CD79B
+(18, 36)"]
+			FMN2_R1_C12 [label="FMN2
+(18, 36)"]
+			GNA13_R1_C12 [label="GNA13
+(18, 36)"]
+			ID3_R1_C12 [label="ID3
+(18, 36)"]
+			PPM1D_R1_C12 [label="PPM1D
+(18, 36)"]
+			PRKAR1A_R1_C12 [label="PRKAR1A
+(18, 36)"]
+			RGS7_R1_C12 [label="RGS7
+(18, 36)"]
+			SOX9_R1_C12 [label="SOX9
+(18, 36)"]
+			GRIN2A_R1_C12 [label="GRIN2A
+(36)"]
+			TP53_R1_C12 [label="TP53
+(36)"]
+		}
+		subgraph cluster_R1_C15 {
+			color=lightgrey label="Cluster 15" style=filled
+			BCL9_R1_C15 [label="BCL9
+(22)"]
+			GRIN2A_R1_C15 [label="GRIN2A
+(22)"]
+		}
+		subgraph cluster_R1_C13 {
+			color=lightgrey label="Cluster 13" style=filled
+			STAG1_R1_C13 [label="STAG1
+(38)"]
+		}
+		subgraph cluster_R1_C17 {
+			color=lightgrey label="Cluster 17" style=filled
+			BCL9_R1_C17 [label="BCL9
+(40)"]
+		}
+		subgraph cluster_R1_C14 {
+			color=lightgrey label="Cluster 14" style=filled
+			CD79B_R1_C14 [label="CD79B
+(44)"]
+			GNA13_R1_C14 [label="GNA13
+(44)"]
+			PRKAR1A_R1_C14 [label="PRKAR1A
+(44)"]
+			PTPRD_R1_C14 [label="PTPRD
+(44)"]
+		}
+		subgraph cluster_R1_C4 {
+			color=lightgrey label="Cluster 4" style=filled
+			PTPRD_R1_C4 [label="PTPRD
+(45)"]
+		}
+		subgraph cluster_R1_C6 {
+			color=lightgrey label="Cluster 6" style=filled
+			BCL9_R1_C6 [label="BCL9
+(46)"]
+			CD79B_R1_C6 [label="CD79B
+(46)"]
+			GNA13_R1_C6 [label="GNA13
+(46)"]
+			PRKAR1A_R1_C6 [label="PRKAR1A
+(46)"]
+			STAG1_R1_C6 [label="STAG1
+(46)"]
+			TAF15_R1_C6 [label="TAF15
+(46)"]
+		}
+		subgraph cluster_R1_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			FGD5_R1_C1 [label="FGD5
+(47, 50)"]
+			PIK3CA_R1_C1 [label="PIK3CA
+(47, 50)"]
+			TAF15_R1_C1 [label="TAF15
+(47)"]
+			WWTR1_R1_C1 [label="WWTR1
+(47, 50)"]
+			GRIN2A_R1_C1 [label="GRIN2A
+(50)"]
+			PTPRD_R1_C1 [label="PTPRD
+(50)"]
+		}
+	}
+	subgraph cluster_rank_2 {
+		rank=same
+		color=grey fontsize=20 label="Rank 2" labeljust=c style=dashed
+		anchor_R2 [height=0 shape=point style=invis width=0]
+		subgraph cluster_R2_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			CD79B_R2_C2 [label="CD79B
+(2, 34)"]
+			CDK12_R2_C2 [label="CDK12
+(2)"]
+			CLTC_R2_C2 [label="CLTC
+(2, 34, 46)"]
+			COL1A1_R2_C2 [label="COL1A1
+(2, 34)"]
+			ERBB2_R2_C2 [label="ERBB2
+(2)"]
+			GPAA1_R2_C2 [label="GPAA1
+(2, 34)"]
+			MSI2_R2_C2 [label="MSI2
+(2, 34, 46)"]
+			PPM1D_R2_C2 [label="PPM1D
+(2, 34, 46)"]
+			RECQL4_R2_C2 [label="RECQL4
+(2, 34)"]
+			RNF43_R2_C2 [label="RNF43
+(2, 34, 46)"]
+			USP6_R2_C2 [label="USP6
+(2, 34, 46)"]
+			RAD21_R2_C2 [label="RAD21
+(34)"]
+			TP53_R2_C2 [label="TP53
+(34)"]
+		}
+		subgraph cluster_R2_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			GPAA1_R2_C1 [label="GPAA1
+(3, 4, 7, 37, 48)"]
+			RAD21_R2_C1 [label="RAD21
+(3, 4, 37, 48)"]
+			RECQL4_R2_C1 [label="RECQL4
+(3, 4, 7, 37, 48)"]
+			GRIN2A_R2_C1 [label="GRIN2A
+(4)"]
+		}
+		subgraph cluster_R2_C6 {
+			color=lightgrey label="Cluster 6" style=filled
+			ARNT_R2_C6 [label="ARNT
+(6, 42, 44)"]
+			BCL9_R2_C6 [label="BCL9
+(6, 42, 44)"]
+			CD79B_R2_C6 [label="CD79B
+(6, 42)"]
+			CDK12_R2_C6 [label="CDK12
+(6, 42, 44)"]
+			CLTC_R2_C6 [label="CLTC
+(6, 42, 44)"]
+			COL1A1_R2_C6 [label="COL1A1
+(6, 42, 44)"]
+			EPHA2_R2_C6 [label="EPHA2
+(6, 44)"]
+			ERBB2_R2_C6 [label="ERBB2
+(6, 42, 44)"]
+			FLG_R2_C6 [label="FLG
+(6, 42, 44)"]
+			GRIN2A_R2_C6 [label="GRIN2A
+(6)"]
+			MSI2_R2_C6 [label="MSI2
+(6, 42, 44)"]
+			PPM1D_R2_C6 [label="PPM1D
+(6, 42, 44)"]
+			RNF43_R2_C6 [label="RNF43
+(6, 42, 44)"]
+			SETDB1_R2_C6 [label="SETDB1
+(6, 42, 44)"]
+			USP6_R2_C6 [label="USP6
+(6, 42, 44)"]
+			ZBTB7B_R2_C6 [label="ZBTB7B
+(6, 42, 44)"]
+			TP53_R2_C6 [label="TP53
+(42)"]
+		}
+		subgraph cluster_R2_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			ARNT_R2_C5 [label="ARNT
+(8, 21, 32, 33)"]
+			BCL9_R2_C5 [label="BCL9
+(8, 21, 32, 33)"]
+			EPHA2_R2_C5 [label="EPHA2
+(8, 33)"]
+			FLG_R2_C5 [label="FLG
+(8, 21, 32, 33)"]
+			SETDB1_R2_C5 [label="SETDB1
+(8, 21, 32, 33)"]
+			ZBTB7B_R2_C5 [label="ZBTB7B
+(8, 21, 32, 33)"]
+		}
+		subgraph cluster_R2_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			GRIN2A_R2_C0 [label="GRIN2A
+(11, 18, 19, 38)"]
+			RAD21_R2_C0 [label="RAD21
+(11)"]
+			CDK12_R2_C0 [label="CDK12
+(18)"]
+			ERBB2_R2_C0 [label="ERBB2
+(18)"]
+		}
+		subgraph cluster_R2_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			CD79B_R2_C3 [label="CD79B
+(39)"]
+			TP53_R2_C3 [label="TP53
+(39)"]
+		}
+	}
+	subgraph cluster_rank_3 {
+		rank=same
+		color=grey fontsize=20 label="Rank 3" labeljust=c style=dashed
+		anchor_R3 [height=0 shape=point style=invis width=0]
+		subgraph cluster_R3_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			BCR_R3_C0 [label="BCR
+(3, 11)"]
+			CHEK2_R3_C0 [label="CHEK2
+(3, 11)"]
+			CLTCL1_R3_C0 [label="CLTCL1
+(3, 11)"]
+			DGCR8_R3_C0 [label="DGCR8
+(3, 11)"]
+			EP300_R3_C0 [label="EP300
+(3, 11)"]
+			EWSR1_R3_C0 [label="EWSR1
+(3, 11)"]
+			LZTR1_R3_C0 [label="LZTR1
+(3, 11)"]
+			MAPK1_R3_C0 [label="MAPK1
+(3, 11)"]
+			ARID1B_R3_C0 [label="ARID1B
+(11)"]
+			CADM2_R3_C0 [label="CADM2
+(11)"]
+			ESR1_R3_C0 [label="ESR1
+(11)"]
+			FLCN_R3_C0 [label="FLCN
+(11)"]
+			FOXP1_R3_C0 [label="FOXP1
+(11)"]
+			LATS1_R3_C0 [label="LATS1
+(11)"]
+			LPA_R3_C0 [label="LPA
+(11)"]
+			PTPRD_R3_C0 [label="PTPRD
+(11)"]
+			QKI_R3_C0 [label="QKI
+(11)"]
+		}
+		subgraph cluster_R3_C4 {
+			color=lightgrey label="Cluster 4" style=filled
+			ARID1B_R3_C4 [label="ARID1B
+(7)"]
+			ESR1_R3_C4 [label="ESR1
+(7)"]
+			LATS1_R3_C4 [label="LATS1
+(7)"]
+			LPA_R3_C4 [label="LPA
+(7)"]
+			QKI_R3_C4 [label="QKI
+(7)"]
+		}
+		subgraph cluster_R3_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			FAT1_R3_C5 [label="FAT1
+(8)"]
+			FGFR3_R3_C5 [label="FGFR3
+(8)"]
+			FLCN_R3_C5 [label="FLCN
+(8)"]
+			PTPRD_R3_C5 [label="PTPRD
+(8)"]
+			QKI_R3_C5 [label="QKI
+(8)"]
+		}
+		subgraph cluster_R3_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			STAG1_R3_C2 [label="STAG1
+(32, 42)"]
+			CADM2_R3_C2 [label="CADM2
+(42)"]
+			FOXP1_R3_C2 [label="FOXP1
+(42)"]
+			PTPRD_R3_C2 [label="PTPRD
+(42)"]
+		}
+		subgraph cluster_R3_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			FAT1_R3_C1 [label="FAT1
+(33, 37)"]
+			FGFR3_R3_C1 [label="FGFR3
+(33)"]
+		}
+	}
+	subgraph cluster_rank_4 {
+		rank=same
+		color=grey fontsize=20 label="Rank 4" labeljust=c style=dashed
+		anchor_R4 [height=0 shape=point style=invis width=0]
+		subgraph cluster_R4_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			ARHGAP35_R4_C0 [label="ARHGAP35
+(7)"]
+			ARHGEF10_R4_C0 [label="ARHGEF10
+(7)"]
+			BUB3_R4_C0 [label="BUB3
+(7, 21)"]
+			CIC_R4_C0 [label="CIC
+(7)"]
+			CNOT3_R4_C0 [label="CNOT3
+(7)"]
+			DDB2_R4_C0 [label="DDB2
+(7)"]
+			FGFR2_R4_C0 [label="FGFR2
+(7, 21)"]
+			PEG3_R4_C0 [label="PEG3
+(7, 21)"]
+			SMC3_R4_C0 [label="SMC3
+(7, 21)"]
+			TCF7L2_R4_C0 [label="TCF7L2
+(7, 21)"]
+			U2AF2_R4_C0 [label="U2AF2
+(7, 21)"]
+		}
+		subgraph cluster_R4_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			CD79B_R4_C2 [label="CD79B
+(8)"]
+			CLTC_R4_C2 [label="CLTC
+(8)"]
+			COL1A1_R4_C2 [label="COL1A1
+(8)"]
+		}
+		subgraph cluster_R4_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			ALDH2_R4_C1 [label="ALDH2
+(43)"]
+			ATF7IP_R4_C1 [label="ATF7IP
+(43)"]
+			BCL7A_R4_C1 [label="BCL7A
+(43)"]
+			CDKN1B_R4_C1 [label="CDKN1B
+(43)"]
+			CLIP1_R4_C1 [label="CLIP1
+(43)"]
+			TP53_R4_C1 [label="TP53
+(43)"]
+		}
+	}
+	subgraph cluster_rank_5 {
+		rank=same
+		color=grey fontsize=20 label="Rank 5" labeljust=c style=dashed
+		anchor_R5 [height=0 shape=point style=invis width=0]
+		subgraph cluster_R5_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			FAT1_R5_C1 [label="FAT1
+(21)"]
+			FBXW7_R5_C1 [label="FBXW7
+(21)"]
+			FGFR3_R5_C1 [label="FGFR3
+(21)"]
+			RPS3A_R5_C1 [label="RPS3A
+(21)"]
+		}
+	}
+	anchor_R1 -> anchor_R2 [style=invis]
+	anchor_R2 -> anchor_R3 [style=invis]
+	anchor_R3 -> anchor_R4 [style=invis]
+	anchor_R4 -> anchor_R5 [style=invis]
+	AKT3_R1_C9 -> GPAA1_R2_C1 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C1 ltail=cluster_R1_C9 penwidth=5.553435864596082]
+	GPAA1_R2_C1 -> BCR_R3_C0 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R3_C0 ltail=cluster_R2_C1 penwidth=4.536328006927126]
+	AKT3_R1_C2 -> GPAA1_R2_C1 [label="2 pts" color="#333333" fontsize=11 lhead=cluster_R2_C1 ltail=cluster_R1_C2 penwidth=5.553435864596082]
+	PTPRD_R1_C10 -> ARNT_R2_C6 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C6 ltail=cluster_R1_C10 penwidth=6.658884255845392]
+	GPAA1_R2_C1 -> ARID1B_R3_C4 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R3_C4 ltail=cluster_R2_C1 penwidth=6.036328006927126]
+	ARID1B_R3_C4 -> ARHGAP35_R4_C0 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R4_C0 ltail=cluster_R3_C4 penwidth=7.536328006927126]
+	PIK3CA_R1_C11 -> ARNT_R2_C5 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C5 ltail=cluster_R1_C11 penwidth=6.036328006927126]
+	ARNT_R2_C5 -> FAT1_R3_C5 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R3_C5 ltail=cluster_R2_C5 penwidth=6.036328006927126]
+	FAT1_R3_C5 -> CD79B_R4_C2 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R4_C2 ltail=cluster_R3_C5 penwidth=9.036328006927125]
+	GRIN2A_R2_C0 -> BCR_R3_C0 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R3_C0 ltail=cluster_R2_C0 penwidth=7.536328006927126]
+	AKT3_R1_C12 -> GRIN2A_R2_C0 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C0 ltail=cluster_R1_C12 penwidth=6.036328006927126]
+	ARHGAP35_R4_C0 -> FAT1_R5_C1 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R5_C1 ltail=cluster_R4_C0 penwidth=9.036328006927125]
+	ARNT_R2_C5 -> STAG1_R3_C2 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R3_C2 ltail=cluster_R2_C5 penwidth=4.536328006927126]
+	AKT3_R1_C5 -> ARNT_R2_C5 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C5 ltail=cluster_R1_C5 penwidth=6.036328006927126]
+	ARNT_R2_C5 -> FAT1_R3_C1 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R3_C1 ltail=cluster_R2_C5 penwidth=4.536328006927126]
+	ATR_R1_C0 -> CD79B_R2_C2 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C2 ltail=cluster_R1_C0 penwidth=4.2814405047636575]
+	GPAA1_R2_C1 -> FAT1_R3_C1 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R3_C1 ltail=cluster_R2_C1 penwidth=4.536328006927126]
+	STAG1_R1_C13 -> GRIN2A_R2_C0 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C0 ltail=cluster_R1_C13 penwidth=6.036328006927126]
+	ARNT_R2_C6 -> STAG1_R3_C2 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R3_C2 ltail=cluster_R2_C6 penwidth=7.536328006927126]
+	CD79B_R1_C14 -> ARNT_R2_C6 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C6 ltail=cluster_R1_C14 penwidth=6.658884255845392]
+	BCL9_R1_C6 -> CD79B_R2_C2 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C2 ltail=cluster_R1_C6 penwidth=6.658884255845392]
+	CD79B_R1_C3 -> GPAA1_R2_C1 [label="1 pts" color="#333333" fontsize=11 lhead=cluster_R2_C1 ltail=cluster_R1_C3 penwidth=4.053435864596082]
+}
