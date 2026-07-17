@@ -10,7 +10,7 @@ import utils.plot_both
 import networkx as nx
 import matplotlib.pyplot as plt
 import os
-import utils.plot_cancer_progession
+#import utils.plot_cancer_progession
 
 #-----------------------------------
 #Caricamento e pulizia dei dati 
@@ -36,7 +36,6 @@ def load_and_filter_data(filepath, ttype_selezionato):
     print(f"Dataset filtrato per {ttype_selezionato}. Righe: {len(df_filtrato)}")
     print("number of patients",len(df["sample_id"].unique()))
     return df_filtrato
-
 
 def print_patient_ranks(df):
     """Stampa tutti i rank associati a ciascun paziente."""
@@ -336,7 +335,7 @@ def create_tree(gene_connections):
 def main():
     # Parametri
     file_rds = '06_Cb_BTM_table.rds'
-    tumore = "ESAD" #ESAD
+    tumore = "ESAD" #None
     
     # 1. Caricamento e Preparazione
     df = load_and_filter_data(file_rds, tumore)
@@ -362,26 +361,26 @@ def main():
 #    --- STAMPE GRAFICHE ---
     # A. Albero semplificato (Pazienti)
     print("Generazione albero Pazienti semplice...")
-    #pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
+    pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
     
 #    B. Albero semplificato (Geni)
     print("Generazione albero Geni semplice...")
-    #pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
+    pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
     
     # C. Albero evolutivo reale basato sulle frequenze (PMI)
     print("Generazione albero evolutivo PMI...")
-    #pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
+    pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
     
-    sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'])
+    # sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'])
     
-    gene_connections = create_gene_connections(sorted_pmi_edges, gene_clusters)
-    # Keeps only items with pmi >= 2.5
-    filtered_gene_connection = [d for d in gene_connections if d[2] >= 2.5]
+    # gene_connections = create_gene_connections(sorted_pmi_edges, gene_clusters)
+    # # Keeps only items with pmi >= 2.5
+    # filtered_gene_connection = [d for d in gene_connections if d[2] >= 2.5]
     
     
-    gad = create_tree(filtered_gene_connection)
-    app = utils.plot_cancer_progession.create_interactive_dag_app(gad)
-    app.run(debug=True)
+    # gad = create_tree(filtered_gene_connection)
+    # app = utils.plot_cancer_progession.create_interactive_dag_app(gad)
+    # app.run(debug=True)
 
 
 if __name__ == "__main__":
