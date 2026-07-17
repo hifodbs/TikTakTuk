@@ -4,52 +4,6 @@ import pandas as pd
 import numpy as np
 import pandas as pd
 
-def check_if_amplified_or_loh(row):
-    """
-    Classifica la singola riga coprendo i tre scenari:
-    1. LOH (restituisce True)
-    2. NaN senza LOH (restituisce False)
-    3. Dati presenti (calcola la distanza VAF, True se amplificato)
-    """
-    karyo = str(row['karyotype'])
-    try:
-        maj, min_allele = map(int, karyo.split(':'))
-    except ValueError:
-        return False
-        
-    if min_allele > maj:
-        maj, min_allele = min_allele, maj
-
-    cn = maj + min_allele
-
-    # ==========================================
-    # CASO 1: LOH (Loss of Heterozygosity) o Amplificazione Massiccia
-    # ==========================================
-    if min_allele == 0 or cn >= 5:
-        return True 
-        
-    # ==========================================
-    # CASO 2: Valori NaN (ma senza LOH)
-    # ==========================================
-    if pd.isna(row['NV']) or pd.isna(row['DP']) or row['DP'] == 0:
-        return False
-
-    # ==========================================
-    # CASO 3: Dati presenti, calcolo della VAF
-    # ==========================================
-    if maj == min_allele or cn == 0:
-        return False  # Cariotipo bilanciato
-        
-    vaf = row['NV'] / row['DP']
-    e_maj = maj / cn
-    e_min = min_allele / cn
-    
-    # Test della distanza
-    dist_maj = abs(vaf - e_maj)
-    dist_min = abs(vaf - e_min)
-    
-    # True se la mutazione appartiene all'allele amplificato (Major)
-    return dist_maj < dist_min
 
 
 def weight_genes(df_filtrato, top_n=20):
@@ -62,9 +16,14 @@ def weight_genes(df_filtrato, top_n=20):
     # 2. Moltiplicatore PCAWG
     df['b_pcawg'] = np.where(df['mutation_call'].notna(), 2.0, 1.0)
 
-    # 3. Valutazione Cariotipo (Richiede la tua funzione check_if_amplified_or_loh)
-    df['is_severe_karyo'] = df.apply(check_if_amplified_or_loh, axis=1)
-    df['k_severity'] = np.where(df['is_severe_karyo'], 1.5, 1.0)
+    # 3. NUOVA LOGICA CARIOTIPO / MOLTEPLICITÀ
+    # Se mult_estimate è presente (non è NaN), usiamo 1.0 + (molteplicità * 0.2), cariotipo: 2:0, 2:2, 2:1
+    # Se mult_estimate è NaN, usiamo 1.0: WT, CNA_driver
+    df['k_severity'] = np.where(
+        df['mult_estimate'].notna(), 
+        1.0 + (df['mult_estimate'] * 0.2), 
+        1.0
+    )
 
     # 4. Fattore WGD globale
     df['wgd_factor'] = np.where(df['is_WGD'] == True, 0.8, 1.0)
