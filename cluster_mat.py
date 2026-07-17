@@ -17,24 +17,37 @@ import os
 #----------------------------------
 
 def load_and_filter_data(filepath, ttype_selezionato):
-    """Carica i dati e filtra per tipo di tumore e geni validi."""
+    """Carica i dati, filtra e stampa le statistiche finali."""
     
     print(f"Caricamento dataset da {filepath}...")
     result = pyreadr.read_r(filepath)
     df = result[None]
 
-    if ttype_selezionato != None:
-        df_filtrato = df[df["ttype"] == ttype_selezionato].copy()  #selezione del tumore 
+    # 1. Selezione del tumore (se richiesto)
+    if ttype_selezionato is not None:
+        df_filtrato = df[df["ttype"] == ttype_selezionato].copy()
     else:
-        df_filtrato = df.copy()  #selezione del tumore 
-    #esclusione wgd-wt
+        df_filtrato = df.copy()
+
+    # 2. Esclusione dei WGD-WT (Mutazione WT con is_WGD = True)
     is_wgd_wt = (df_filtrato['mutatation_status'] == 'WT') & (df_filtrato['is_WGD'] == True)
-    df_filtrato = df_filtrato[~is_wgd_wt]
-    df_filtrato = df_filtrato.dropna(subset=["clock_rank", "gene"])
+    df_filtrato = df_filtrato[~is_wgd_wt].copy()
+    
+    # 3. Pulizia righe: deve esserci sia il clock_rank che il gene
+    df_filtrato = df_filtrato.dropna(subset=["clock_rank", "gene"]).copy()
+    
     df_filtrato.reset_index(drop=True, inplace=True)
     
-    print(f"Dataset filtrato per {ttype_selezionato}. Righe: {len(df_filtrato)}")
-    print("number of patients",len(df["sample_id"].unique()))
+    # --- STATISTICHE FINALI ---
+    print("\n" + "="*50)
+    print("STATISTICHE FILTRAGGIO:")
+    print(f"Tumore selezionato: {ttype_selezionato if ttype_selezionato else 'Tutti'}")
+    print(f"Pazienti totali (dal file originale): {len(df['sample_id'].unique())}")
+    print(f"Pazienti rimanenti: {len(df_filtrato['sample_id'].unique())}")
+    print(f"Geni unici rimanenti: {len(df_filtrato['gene'].unique())}")
+    print(f"Segmenti (righe) totali rimanenti: {len(df_filtrato)}")
+    print("="*50 + "\n")
+    
     return df_filtrato
 
 def print_patient_ranks(df):
