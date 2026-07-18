@@ -5,110 +5,80 @@ digraph {
 	subgraph cluster_rank_1 {
 		rank=same
 		color=grey fontsize=20 label="Rank 1" labeljust=c style=dashed
-		subgraph cluster_R1_C16 {
-			color=lightgrey label="Cluster 16" style=filled
-			P_1_R1_C16 [label="Paziente 1"]
-		}
-		subgraph cluster_R1_C7 {
-			color=lightgrey label="Cluster 7" style=filled
-			P_2_R1_C7 [label="Paziente 2"]
-			P_7_R1_C7 [label="Paziente 7"]
-			P_11_R1_C7 [label="Paziente 11"]
-			P_13_R1_C7 [label="Paziente 13"]
-			P_16_R1_C7 [label="Paziente 16"]
-			P_17_R1_C7 [label="Paziente 17"]
-			P_19_R1_C7 [label="Paziente 19"]
-			P_21_R1_C7 [label="Paziente 21"]
-			P_25_R1_C7 [label="Paziente 25"]
-			P_29_R1_C7 [label="Paziente 29"]
-			P_32_R1_C7 [label="Paziente 32"]
-			P_39_R1_C7 [label="Paziente 39"]
-			P_42_R1_C7 [label="Paziente 42"]
-			P_43_R1_C7 [label="Paziente 43"]
-		}
-		subgraph cluster_R1_C9 {
-			color=lightgrey label="Cluster 9" style=filled
-			P_3_R1_C9 [label="Paziente 3"]
-		}
 		subgraph cluster_R1_C2 {
 			color=lightgrey label="Cluster 2" style=filled
-			P_4_R1_C2 [label="Paziente 4"]
-			P_14_R1_C2 [label="Paziente 14"]
-			P_28_R1_C2 [label="Paziente 28"]
-			P_37_R1_C2 [label="Paziente 37"]
-			P_41_R1_C2 [label="Paziente 41"]
-			P_49_R1_C2 [label="Paziente 49"]
-		}
-		subgraph cluster_R1_C8 {
-			color=lightgrey label="Cluster 8" style=filled
-			P_5_R1_C8 [label="Paziente 5"]
-			P_9_R1_C8 [label="Paziente 9"]
-			P_23_R1_C8 [label="Paziente 23"]
-		}
-		subgraph cluster_R1_C10 {
-			color=lightgrey label="Cluster 10" style=filled
-			P_6_R1_C10 [label="Paziente 6"]
-		}
-		subgraph cluster_R1_C11 {
-			color=lightgrey label="Cluster 11" style=filled
-			P_8_R1_C11 [label="Paziente 8"]
-		}
-		subgraph cluster_R1_C5 {
-			color=lightgrey label="Cluster 5" style=filled
-			P_10_R1_C5 [label="Paziente 10"]
-			P_20_R1_C5 [label="Paziente 20"]
-			P_27_R1_C5 [label="Paziente 27"]
-			P_31_R1_C5 [label="Paziente 31"]
-			P_33_R1_C5 [label="Paziente 33"]
-		}
-		subgraph cluster_R1_C3 {
-			color=lightgrey label="Cluster 3" style=filled
-			P_12_R1_C3 [label="Paziente 12"]
-			P_24_R1_C3 [label="Paziente 24"]
-			P_30_R1_C3 [label="Paziente 30"]
-			P_48_R1_C3 [label="Paziente 48"]
-			P_51_R1_C3 [label="Paziente 51"]
-		}
-		subgraph cluster_R1_C0 {
-			color=lightgrey label="Cluster 0" style=filled
-			P_15_R1_C0 [label="Paziente 15"]
-			P_26_R1_C0 [label="Paziente 26"]
-			P_34_R1_C0 [label="Paziente 34"]
-			P_35_R1_C0 [label="Paziente 35"]
-		}
-		subgraph cluster_R1_C12 {
-			color=lightgrey label="Cluster 12" style=filled
-			P_18_R1_C12 [label="Paziente 18"]
-			P_36_R1_C12 [label="Paziente 36"]
-		}
-		subgraph cluster_R1_C15 {
-			color=lightgrey label="Cluster 15" style=filled
-			P_22_R1_C15 [label="Paziente 22"]
-		}
-		subgraph cluster_R1_C13 {
-			color=lightgrey label="Cluster 13" style=filled
-			P_38_R1_C13 [label="Paziente 38"]
-		}
-		subgraph cluster_R1_C17 {
-			color=lightgrey label="Cluster 17" style=filled
-			P_40_R1_C17 [label="Paziente 40"]
-		}
-		subgraph cluster_R1_C14 {
-			color=lightgrey label="Cluster 14" style=filled
-			P_44_R1_C14 [label="Paziente 44"]
+			P_1_R1_C2 [label="Paziente 1"]
+			P_6_R1_C2 [label="Paziente 6"]
+			P_45_R1_C2 [label="Paziente 45"]
 		}
 		subgraph cluster_R1_C4 {
 			color=lightgrey label="Cluster 4" style=filled
-			P_45_R1_C4 [label="Paziente 45"]
+			P_2_R1_C4 [label="Paziente 2"]
+			P_7_R1_C4 [label="Paziente 7"]
+			P_11_R1_C4 [label="Paziente 11"]
+			P_13_R1_C4 [label="Paziente 13"]
+			P_16_R1_C4 [label="Paziente 16"]
+			P_17_R1_C4 [label="Paziente 17"]
+			P_19_R1_C4 [label="Paziente 19"]
+			P_21_R1_C4 [label="Paziente 21"]
+			P_25_R1_C4 [label="Paziente 25"]
+			P_29_R1_C4 [label="Paziente 29"]
+			P_39_R1_C4 [label="Paziente 39"]
+			P_42_R1_C4 [label="Paziente 42"]
+			P_43_R1_C4 [label="Paziente 43"]
 		}
-		subgraph cluster_R1_C6 {
-			color=lightgrey label="Cluster 6" style=filled
-			P_46_R1_C6 [label="Paziente 46"]
+		subgraph cluster_R1_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			P_3_R1_C3 [label="Paziente 3"]
+			P_33_R1_C3 [label="Paziente 33"]
+		}
+		subgraph cluster_R1_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			P_4_R1_C0 [label="Paziente 4"]
+			P_5_R1_C0 [label="Paziente 5"]
+			P_8_R1_C0 [label="Paziente 8"]
+			P_9_R1_C0 [label="Paziente 9"]
+			P_14_R1_C0 [label="Paziente 14"]
+			P_15_R1_C0 [label="Paziente 15"]
+			P_20_R1_C0 [label="Paziente 20"]
+			P_23_R1_C0 [label="Paziente 23"]
+			P_26_R1_C0 [label="Paziente 26"]
+			P_28_R1_C0 [label="Paziente 28"]
+			P_34_R1_C0 [label="Paziente 34"]
+			P_35_R1_C0 [label="Paziente 35"]
+			P_37_R1_C0 [label="Paziente 37"]
+			P_41_R1_C0 [label="Paziente 41"]
+			P_47_R1_C0 [label="Paziente 47"]
+			P_49_R1_C0 [label="Paziente 49"]
+			P_50_R1_C0 [label="Paziente 50"]
 		}
 		subgraph cluster_R1_C1 {
 			color=lightgrey label="Cluster 1" style=filled
-			P_47_R1_C1 [label="Paziente 47"]
-			P_50_R1_C1 [label="Paziente 50"]
+			P_10_R1_C1 [label="Paziente 10"]
+			P_22_R1_C1 [label="Paziente 22"]
+			P_27_R1_C1 [label="Paziente 27"]
+			P_31_R1_C1 [label="Paziente 31"]
+			P_40_R1_C1 [label="Paziente 40"]
+		}
+		subgraph cluster_R1_C6 {
+			color=lightgrey label="Cluster 6" style=filled
+			P_12_R1_C6 [label="Paziente 12"]
+			P_18_R1_C6 [label="Paziente 18"]
+			P_24_R1_C6 [label="Paziente 24"]
+			P_30_R1_C6 [label="Paziente 30"]
+			P_36_R1_C6 [label="Paziente 36"]
+			P_44_R1_C6 [label="Paziente 44"]
+			P_46_R1_C6 [label="Paziente 46"]
+			P_48_R1_C6 [label="Paziente 48"]
+			P_51_R1_C6 [label="Paziente 51"]
+		}
+		subgraph cluster_R1_C7 {
+			color=lightgrey label="Cluster 7" style=filled
+			P_32_R1_C7 [label="Paziente 32"]
+		}
+		subgraph cluster_R1_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			P_38_R1_C5 [label="Paziente 38"]
 		}
 	}
 	subgraph cluster_rank_2 {
@@ -118,28 +88,24 @@ digraph {
 			color=lightgrey label="Cluster 2" style=filled
 			P_2_R2_C2 [label="Paziente 2"]
 			P_34_R2_C2 [label="Paziente 34"]
-			P_46_R2_C2 [label="Paziente 46"]
+		}
+		subgraph cluster_R2_C3 {
+			color=lightgrey label="Cluster 3" style=filled
+			P_3_R2_C3 [label="Paziente 3"]
+			P_4_R2_C3 [label="Paziente 4"]
+			P_7_R2_C3 [label="Paziente 7"]
+			P_37_R2_C3 [label="Paziente 37"]
+			P_48_R2_C3 [label="Paziente 48"]
 		}
 		subgraph cluster_R2_C1 {
 			color=lightgrey label="Cluster 1" style=filled
-			P_3_R2_C1 [label="Paziente 3"]
-			P_4_R2_C1 [label="Paziente 4"]
-			P_7_R2_C1 [label="Paziente 7"]
-			P_37_R2_C1 [label="Paziente 37"]
-			P_48_R2_C1 [label="Paziente 48"]
-		}
-		subgraph cluster_R2_C6 {
-			color=lightgrey label="Cluster 6" style=filled
-			P_6_R2_C6 [label="Paziente 6"]
-			P_42_R2_C6 [label="Paziente 42"]
-			P_44_R2_C6 [label="Paziente 44"]
-		}
-		subgraph cluster_R2_C5 {
-			color=lightgrey label="Cluster 5" style=filled
-			P_8_R2_C5 [label="Paziente 8"]
-			P_21_R2_C5 [label="Paziente 21"]
-			P_32_R2_C5 [label="Paziente 32"]
-			P_33_R2_C5 [label="Paziente 33"]
+			P_6_R2_C1 [label="Paziente 6"]
+			P_8_R2_C1 [label="Paziente 8"]
+			P_21_R2_C1 [label="Paziente 21"]
+			P_32_R2_C1 [label="Paziente 32"]
+			P_33_R2_C1 [label="Paziente 33"]
+			P_42_R2_C1 [label="Paziente 42"]
+			P_44_R2_C1 [label="Paziente 44"]
 		}
 		subgraph cluster_R2_C0 {
 			color=lightgrey label="Cluster 0" style=filled
@@ -151,14 +117,21 @@ digraph {
 		subgraph cluster_R2_C4 {
 			color=lightgrey label="Cluster 4" style=filled
 			P_12_R2_C4 [label="Paziente 12"]
-			P_15_R2_C4 [label="Paziente 15"]
 			P_26_R2_C4 [label="Paziente 26"]
 			P_43_R2_C4 [label="Paziente 43"]
-			P_47_R2_C4 [label="Paziente 47"]
 		}
-		subgraph cluster_R2_C3 {
-			color=lightgrey label="Cluster 3" style=filled
-			P_39_R2_C3 [label="Paziente 39"]
+		subgraph cluster_R2_C6 {
+			color=lightgrey label="Cluster 6" style=filled
+			P_15_R2_C6 [label="Paziente 15"]
+			P_46_R2_C6 [label="Paziente 46"]
+		}
+		subgraph cluster_R2_C7 {
+			color=lightgrey label="Cluster 7" style=filled
+			P_39_R2_C7 [label="Paziente 39"]
+		}
+		subgraph cluster_R2_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			P_47_R2_C5 [label="Paziente 47"]
 		}
 	}
 	subgraph cluster_rank_3 {
@@ -167,31 +140,28 @@ digraph {
 		subgraph cluster_R3_C0 {
 			color=lightgrey label="Cluster 0" style=filled
 			P_3_R3_C0 [label="Paziente 3"]
+			P_7_R3_C0 [label="Paziente 7"]
+			P_8_R3_C0 [label="Paziente 8"]
 			P_11_R3_C0 [label="Paziente 11"]
 		}
 		subgraph cluster_R3_C3 {
 			color=lightgrey label="Cluster 3" style=filled
 			P_4_R3_C3 [label="Paziente 4"]
-			P_21_R3_C3 [label="Paziente 21"]
-			P_43_R3_C3 [label="Paziente 43"]
-		}
-		subgraph cluster_R3_C4 {
-			color=lightgrey label="Cluster 4" style=filled
-			P_7_R3_C4 [label="Paziente 7"]
-		}
-		subgraph cluster_R3_C5 {
-			color=lightgrey label="Cluster 5" style=filled
-			P_8_R3_C5 [label="Paziente 8"]
 		}
 		subgraph cluster_R3_C2 {
 			color=lightgrey label="Cluster 2" style=filled
-			P_32_R3_C2 [label="Paziente 32"]
-			P_42_R3_C2 [label="Paziente 42"]
+			P_21_R3_C2 [label="Paziente 21"]
+			P_33_R3_C2 [label="Paziente 33"]
+			P_37_R3_C2 [label="Paziente 37"]
 		}
 		subgraph cluster_R3_C1 {
 			color=lightgrey label="Cluster 1" style=filled
-			P_33_R3_C1 [label="Paziente 33"]
-			P_37_R3_C1 [label="Paziente 37"]
+			P_32_R3_C1 [label="Paziente 32"]
+			P_42_R3_C1 [label="Paziente 42"]
+		}
+		subgraph cluster_R3_C4 {
+			color=lightgrey label="Cluster 4" style=filled
+			P_43_R3_C4 [label="Paziente 43"]
 		}
 	}
 	subgraph cluster_rank_4 {
@@ -219,8 +189,8 @@ digraph {
 			P_21_R5_C1 [label="Paziente 21"]
 		}
 	}
-	P_6_R1_C10 -> P_21_R2_C5 [color="#222222" lhead=cluster_rank_2 ltail=cluster_rank_1 penwidth=2.5 weight=100]
-	P_21_R2_C5 -> P_7_R3_C4 [color="#222222" lhead=cluster_rank_3 ltail=cluster_rank_2 penwidth=2.5 weight=100]
-	P_7_R3_C4 -> P_8_R4_C2 [color="#222222" lhead=cluster_rank_4 ltail=cluster_rank_3 penwidth=2.5 weight=100]
+	P_23_R1_C0 -> P_42_R2_C1 [color="#222222" lhead=cluster_rank_2 ltail=cluster_rank_1 penwidth=2.5 weight=100]
+	P_42_R2_C1 -> P_21_R3_C2 [color="#222222" lhead=cluster_rank_3 ltail=cluster_rank_2 penwidth=2.5 weight=100]
+	P_21_R3_C2 -> P_8_R4_C2 [color="#222222" lhead=cluster_rank_4 ltail=cluster_rank_3 penwidth=2.5 weight=100]
 	P_8_R4_C2 -> P_21_R5_C1 [color="#222222" lhead=cluster_rank_5 ltail=cluster_rank_4 penwidth=2.5 weight=100]
 }
