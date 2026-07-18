@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import math
 from utils import plot_tree as pt
-from utils.weight_gene import weight_genes
+from utils.weight_gene import weight_genes, weight_genes_vaf_method
 import collections
 from utils.cluster import clusterize_patients
 import utils.plot_both
@@ -74,8 +74,8 @@ def build_boolean_matrix(df_filtrato, top_n=20):
     input_dict = collections.defaultdict(dict)
     
     # 1. Otteniamo i pesi e la mappa dei Top 20 per Rank
-    weights, valid_rank_genes = weight_genes(df_filtrato, top_n)
-    
+#    weights, valid_rank_genes = weight_genes(df_filtrato, top_n)
+    weights, valid_rank_genes= weight_genes_vaf_method(df_filtrato, top_n)
     # all_genes sarà l'unione di tutti i Top 20 (serve per far funzionare Jaccard nel clustering)
     all_genes = list(weights.keys())
     all_weights = list(weights.values())
@@ -357,7 +357,7 @@ def create_tree(gene_connections):
 def main():
     # Parametri
     file_rds = '06_Cb_BTM_table.rds'
-    tumore = "ESAD" #None
+    tumore = 'ESAD'
     
     # 1. Caricamento e Preparazione
     df = load_and_filter_data(file_rds, tumore)
@@ -382,28 +382,28 @@ def main():
     
 # #    --- STAMPE GRAFICHE ---
 #     # A. Albero semplificato (Pazienti)
-#     print("Generazione albero Pazienti semplice...")
-#     pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
+    print("Generazione albero Pazienti semplice...")
+    pt.plot_patients_clusters_simple(patient_clusters, rank_edges, f"tree_patients_simple_{tumore}.gv")
     
 # #    B. Albero semplificato (Geni)
-#     print("Generazione albero Geni semplice...")
-#     pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
+    print("Generazione albero Geni semplice...")
+    pt.plot_genes_clusters_simple(gene_clusters, rank_edges, f"tree_genes_simple_{tumore}.gv")
     
 #     # C. Albero evolutivo reale basato sulle frequenze (PMI)
-#     print("Generazione albero evolutivo PMI...")
-#     pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
+    print("Generazione albero evolutivo PMI...")
+    pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
     
-    sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'])
+    # sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'])
     
-    gene_connections = create_gene_connections(sorted_pmi_edges, gene_clusters)
-    # Keeps only items with pmi >= 2.5
-    #gene_connections = [d for d in gene_connections if d[2] >= 2.5]
+    # gene_connections = create_gene_connections(sorted_pmi_edges, gene_clusters)
+    # # Keeps only items with pmi >= 2.5
+    # #gene_connections = [d for d in gene_connections if d[2] >= 2.5]
     
     
-    gad = create_tree(gene_connections)
-    #print(list(nx.topological_sort(gad)))
-    app = utils.plot_cancer_progession.create_interactive_dag_app(gad,tumore)
-    app.run(debug=True)
+    # gad = create_tree(gene_connections)
+    # #print(list(nx.topological_sort(gad)))
+    # app = utils.plot_cancer_progession.create_interactive_dag_app(gad,tumore)
+    # app.run(debug=True)
 
 
 if __name__ == "__main__":
