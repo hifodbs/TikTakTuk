@@ -31,7 +31,7 @@ def load_and_filter_data(filepath, ttype_selezionato):
         df_filtrato = df.copy()
 
     # 2. Esclusione dei WGD-WT (Mutazione WT con is_WGD = True)
-    is_wgd_wt = (df_filtrato['mutatation_status'] == 'WT') & (df_filtrato['is_WGD'] == True)
+    is_wgd_wt = (df_filtrato['mutatation_status'] == 'WT')
     df_filtrato = df_filtrato[~is_wgd_wt].copy()
     
     # 3. Pulizia righe: deve esserci sia il clock_rank che il gene
@@ -68,13 +68,13 @@ def print_patient_ranks(df):
 #e mappatura ID di ogni paziente ad un numero intero
 #----------------------------------------------------
 
-def build_boolean_matrix(df_filtrato, top_n=20):
+def build_boolean_matrix(df_filtrato, top_n=20, bypass=False):
     """Calcola i pesi, filtra per Rank e costruisce l'array booleano omogeneo."""
     import collections
     input_dict = collections.defaultdict(dict)
     
     # 1. Otteniamo i pesi e la mappa dei Top 20 per Rank
-    weights, valid_rank_genes = weight_genes(df_filtrato, top_n)
+    weights, valid_rank_genes = weight_genes(df_filtrato, top_n, bypass)
     
     # all_genes sarà l'unione di tutti i Top 20 (serve per far funzionare Jaccard nel clustering)
     all_genes = list(weights.keys())
@@ -361,7 +361,7 @@ def main():
     
     # 1. Caricamento e Preparazione
     df = load_and_filter_data(file_rds, tumore)
-    input_dict, all_genes, all_weights = build_boolean_matrix(df, top_n=20)
+    input_dict, all_genes, all_weights = build_boolean_matrix(df, top_n=20, bypass=False)
     patient_mapping = get_patient_mapping(input_dict)
     
     # 2. Esecuzione Clustering
@@ -393,7 +393,7 @@ def main():
 #     print("Generazione albero evolutivo PMI...")
 #     pt.plot_genes_clusters_pmi(gene_clusters, pmi_edges, f"tree_genes_PMI_{tumore}.gv")
     
-    sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'])
+    sorted_pmi_edges = sorted(pmi_edges, key=lambda x: x['pmi'], reverse=True)
     
     gene_connections = create_gene_connections(sorted_pmi_edges, gene_clusters)
     # Keeps only items with pmi >= 2.5

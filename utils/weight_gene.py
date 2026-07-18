@@ -1,12 +1,25 @@
 import numpy as np
 import pandas as pd
 
-import numpy as np
-import pandas as pd
+
+def weight_genes_bypass(df_filtrato):
+    df = df_filtrato.copy()
+    df = df[["gene", "sample_id", "clock_rank"]]
+
+    # Keep only unique (gene, sample, rank) records
+    df = df.drop_duplicates()
+
+    # Count the number of unique rows per gene and sample
+    df_counts = (
+        df.groupby(["gene", "sample_id"]).size().reset_index(name="count")
+    )
+
+    return df_counts
 
 
-
-def weight_genes(df_filtrato, top_n=20):
+def weight_genes(df_filtrato, top_n=20, bypass=False):
+    if bypass:
+        return weight_genes_bypass(df_filtrato)
     df = df_filtrato.copy()
 
     # 1. Mappatura tipologia mutazione (WT neutro a 1.0 per chi non ha WGD)
