@@ -401,8 +401,8 @@ def main():
     
     
     gad = create_tree(gene_connections)
-    print(list(nx.topological_sort(gad)))
-    app = utils.plot_cancer_progession.create_interactive_dag_app(gad)
+    #print(list(nx.topological_sort(gad)))
+    app = utils.plot_cancer_progession.create_interactive_dag_app(gad,tumore)
     app.run(debug=True)
 
 

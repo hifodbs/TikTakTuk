@@ -102,12 +102,15 @@ import networkx as nx
 cyto.load_extra_layouts()
 
 
-def create_interactive_dag_app(G, node_label_attr=None, edge_weight_attr="weight"):
+def create_interactive_dag_app(G,ttype, node_label_attr=None, edge_weight_attr="weight"):
     """
     Crea un'applicazione Dash interattiva per un DAG.
     - Layout compatto 'dagre'
     - Al click su un nodo evidenzia solo i successori (nodi a valle) e resetta cliccando lo sfondo.
     """
+    
+    if ttype == None:
+        ttype = "All"
 
     node_size = "250px"
     text_size = "250px"
@@ -191,7 +194,7 @@ def create_interactive_dag_app(G, node_label_attr=None, edge_weight_attr="weight
         style={"fontFamily": "sans-serif", "padding": "20px"},
         children=[
             html.H2(
-                "Clonal progression — trajectory analysis",
+                "Clonal progression of "+ttype+" tumor(s)— trajectory analysis",
                 style={"textAlign": "center", "color": "#2D3748"},
             ),
             html.P(
