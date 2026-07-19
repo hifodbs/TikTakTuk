@@ -81,13 +81,31 @@ digraph {
 			P_38_R1_C5 [label="Paziente 38"]
 		}
 	}
+	subgraph cluster_rank_nan {
+		rank=same
+		color=grey fontsize=20 label="Rank nan" labeljust=c style=dashed
+		subgraph cluster_Rnan_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			P_2_Rnan_C0 [label="Paziente 2"]
+			P_8_Rnan_C0 [label="Paziente 8"]
+			P_22_Rnan_C0 [label="Paziente 22"]
+			P_30_Rnan_C0 [label="Paziente 30"]
+			P_37_Rnan_C0 [label="Paziente 37"]
+			P_46_Rnan_C0 [label="Paziente 46"]
+			P_48_Rnan_C0 [label="Paziente 48"]
+		}
+		subgraph cluster_Rnan_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_49_Rnan_C1 [label="Paziente 49"]
+		}
+	}
 	subgraph cluster_rank_2 {
 		rank=same
 		color=grey fontsize=20 label="Rank 2" labeljust=c style=dashed
-		subgraph cluster_R2_C2 {
-			color=lightgrey label="Cluster 2" style=filled
-			P_2_R2_C2 [label="Paziente 2"]
-			P_34_R2_C2 [label="Paziente 34"]
+		subgraph cluster_R2_C1 {
+			color=lightgrey label="Cluster 1" style=filled
+			P_2_R2_C1 [label="Paziente 2"]
+			P_34_R2_C1 [label="Paziente 34"]
 		}
 		subgraph cluster_R2_C3 {
 			color=lightgrey label="Cluster 3" style=filled
@@ -97,22 +115,22 @@ digraph {
 			P_37_R2_C3 [label="Paziente 37"]
 			P_48_R2_C3 [label="Paziente 48"]
 		}
-		subgraph cluster_R2_C1 {
-			color=lightgrey label="Cluster 1" style=filled
-			P_6_R2_C1 [label="Paziente 6"]
-			P_8_R2_C1 [label="Paziente 8"]
-			P_21_R2_C1 [label="Paziente 21"]
-			P_32_R2_C1 [label="Paziente 32"]
-			P_33_R2_C1 [label="Paziente 33"]
-			P_42_R2_C1 [label="Paziente 42"]
-			P_44_R2_C1 [label="Paziente 44"]
-		}
 		subgraph cluster_R2_C0 {
 			color=lightgrey label="Cluster 0" style=filled
-			P_11_R2_C0 [label="Paziente 11"]
-			P_18_R2_C0 [label="Paziente 18"]
-			P_19_R2_C0 [label="Paziente 19"]
-			P_38_R2_C0 [label="Paziente 38"]
+			P_6_R2_C0 [label="Paziente 6"]
+			P_8_R2_C0 [label="Paziente 8"]
+			P_21_R2_C0 [label="Paziente 21"]
+			P_32_R2_C0 [label="Paziente 32"]
+			P_33_R2_C0 [label="Paziente 33"]
+			P_42_R2_C0 [label="Paziente 42"]
+			P_44_R2_C0 [label="Paziente 44"]
+		}
+		subgraph cluster_R2_C2 {
+			color=lightgrey label="Cluster 2" style=filled
+			P_11_R2_C2 [label="Paziente 11"]
+			P_18_R2_C2 [label="Paziente 18"]
+			P_19_R2_C2 [label="Paziente 19"]
+			P_38_R2_C2 [label="Paziente 38"]
 		}
 		subgraph cluster_R2_C4 {
 			color=lightgrey label="Cluster 4" style=filled
@@ -137,16 +155,19 @@ digraph {
 	subgraph cluster_rank_3 {
 		rank=same
 		color=grey fontsize=20 label="Rank 3" labeljust=c style=dashed
-		subgraph cluster_R3_C0 {
-			color=lightgrey label="Cluster 0" style=filled
-			P_3_R3_C0 [label="Paziente 3"]
-			P_7_R3_C0 [label="Paziente 7"]
-			P_8_R3_C0 [label="Paziente 8"]
-			P_11_R3_C0 [label="Paziente 11"]
+		subgraph cluster_R3_C4 {
+			color=lightgrey label="Cluster 4" style=filled
+			P_3_R3_C4 [label="Paziente 3"]
 		}
 		subgraph cluster_R3_C3 {
 			color=lightgrey label="Cluster 3" style=filled
 			P_4_R3_C3 [label="Paziente 4"]
+		}
+		subgraph cluster_R3_C0 {
+			color=lightgrey label="Cluster 0" style=filled
+			P_7_R3_C0 [label="Paziente 7"]
+			P_8_R3_C0 [label="Paziente 8"]
+			P_11_R3_C0 [label="Paziente 11"]
 		}
 		subgraph cluster_R3_C2 {
 			color=lightgrey label="Cluster 2" style=filled
@@ -159,9 +180,9 @@ digraph {
 			P_32_R3_C1 [label="Paziente 32"]
 			P_42_R3_C1 [label="Paziente 42"]
 		}
-		subgraph cluster_R3_C4 {
-			color=lightgrey label="Cluster 4" style=filled
-			P_43_R3_C4 [label="Paziente 43"]
+		subgraph cluster_R3_C5 {
+			color=lightgrey label="Cluster 5" style=filled
+			P_43_R3_C5 [label="Paziente 43"]
 		}
 	}
 	subgraph cluster_rank_4 {
@@ -189,8 +210,9 @@ digraph {
 			P_21_R5_C1 [label="Paziente 21"]
 		}
 	}
-	P_23_R1_C0 -> P_42_R2_C1 [color="#222222" lhead=cluster_rank_2 ltail=cluster_rank_1 penwidth=2.5 weight=100]
-	P_42_R2_C1 -> P_21_R3_C2 [color="#222222" lhead=cluster_rank_3 ltail=cluster_rank_2 penwidth=2.5 weight=100]
+	P_23_R1_C0 -> P_37_Rnan_C0 [color="#222222" lhead=cluster_rank_nan ltail=cluster_rank_1 penwidth=2.5 weight=100]
+	P_37_Rnan_C0 -> P_42_R2_C0 [color="#222222" lhead=cluster_rank_2 ltail=cluster_rank_nan penwidth=2.5 weight=100]
+	P_42_R2_C0 -> P_21_R3_C2 [color="#222222" lhead=cluster_rank_3 ltail=cluster_rank_2 penwidth=2.5 weight=100]
 	P_21_R3_C2 -> P_8_R4_C2 [color="#222222" lhead=cluster_rank_4 ltail=cluster_rank_3 penwidth=2.5 weight=100]
 	P_8_R4_C2 -> P_21_R5_C1 [color="#222222" lhead=cluster_rank_5 ltail=cluster_rank_4 penwidth=2.5 weight=100]
 }
